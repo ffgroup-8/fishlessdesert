@@ -1764,7 +1764,9 @@
   // unlocks clicking; edits persist to THIS browser's localStorage only,
   // and publish to the client when the file is pushed.
   (function() {
-    var LS_KEY = 'cxcPhaseChecks';
+    // Namespaced per tracker: every ffgroup-8.github.io tracker shares one
+    // origin, so a fixed key lets one project's ticks bleed into another.
+    var LS_KEY = 'phaseChecks:' + location.pathname;
     var EDIT = /(?:^|[#&])edit(?:$|[&=])/.test(location.hash) || location.hash === '#edit';
     var checks = Array.prototype.slice.call(document.querySelectorAll('.phase-check'));
     if (!checks.length) return;
