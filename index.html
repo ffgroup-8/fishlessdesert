@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)file:///Users/jondenjackson/Downloads/project-tracker-boilerplate.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fishless Desert — Sitemap &amp; Status Tracker</title>
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39;&gt;&lt;text y=&#39;.9em&#39; font-size=&#39;90&#39;&gt;%F0%9F%93%88&lt;/text&gt;&lt;/svg&gt;">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Geist', sans-serif;
+    background: #f5f5f0;
+    color: #1a1a1a;
+    padding: 40px 24px 80px;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .header-left {}
+
+  .sitemap-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 4px;
+  }
+
+  .sitemap-subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0d2e3f;
+    margin-bottom: 4px;
+  }
+
+  .sitemap-date {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .sitemap-update {
+    font-size: 11px;
+    color: #bbb;
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  /* ── Status Legend ── */
+  .legend-box {
+    background: #fff;
+    border: 1.5px solid #d4d4cd;
+    border-radius: 10px;
+    padding: 16px 20px;
+    min-width: 360px;
+  }
+
+  .legend-box-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0d2e3f;
+    margin-bottom: 12px;
+  }
+
+  .legend-phase-list { display: flex; flex-direction: column; gap: 9px; }
+  .legend-phase-item { display: flex; align-items: center; gap: 9px; font-size: 12.5px; font-weight: 600; color: #333; }
+  .legend-phase-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .legend-status-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; padding-top: 11px; border-top: 1px solid #eee; }
+  .legend-status-note { font-size: 10px; color: #aaa; margin-top: 9px; }
+
+  .legend-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 6px 16px;
+    align-items: center;
+  }
+
+  .legend-grid .lg-header {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .legend-grid .lg-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .legend-grid .lg-label .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-design { background: #6366f1; }
+  .dot-dev { background: #f59e0b; }
+  .dot-seo { background: #10b981; }
+  .dot-content { background: #ef4444; }
+  .dot-sanity { background: #8b5cf6; }
+  .dot-content-created { background: #0ea5e9; }
+
+  .legend-grid .lg-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #666;
+  }
+
+  /* ── Status Indicators ── */
+  .status-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1.5px solid;
+    white-space: nowrap;
+  }
+
+  .status-pill .pill-icon {
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  /* ── Not Started (default) ── */
+  .status-pill.not-started {
+    background: #f8f8f6;
+    border-color: #ddd;
+    color: #aaa;
+  }
+
+  /* ── In Progress ── */
+  .status-pill.in-progress {
+    border-style: solid;
+  }
+
+  .status-pill.in-progress.design {
+    background: #eef0ff;
+    border-color: #6366f1;
+    color: #6366f1;
+  }
+
+  .status-pill.in-progress.dev {
+    background: #fef8ec;
+    border-color: #f59e0b;
+    color: #b87708;
+  }
+
+  .status-pill.in-progress.seo-tag {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #059669;
+  }
+
+  .status-pill.in-progress.content {
+    background: #fef0f0;
+    border-color: #ef4444;
+    color: #dc2626;
+  }
+
+  .status-pill.in-progress.sanity {
+    background: #f3f0ff;
+    border-color: #8b5cf6;
+    color: #7c3aed;
+  }
+
+  /* ── Completed ── */
+  .status-pill.completed {
+    color: #fff;
+  }
+
+  .status-pill.completed.design {
+    background: #6366f1;
+    border-color: #6366f1;
+  }
+
+  .status-pill.completed.dev {
+    background: #f59e0b;
+    border-color: #f59e0b;
+    color: #fff;
+  }
+
+  .status-pill.completed.seo-tag {
+    background: #10b981;
+    border-color: #10b981;
+  }
+
+  .status-pill.completed.content {
+    background: #ef4444;
+    border-color: #ef4444;
+  }
+
+  .status-pill.completed.sanity {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+  }
+
+  .status-pill.in-progress.content-created {
+    background: #e0f2fe;
+    border-color: #0ea5e9;
+    color: #0369a1;
+  }
+
+  .status-pill.completed.content-created {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #fff;
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 56px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0d2e3f;
+    background: #e8e8e2;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+
+  /* ── Tree Layout ── */
+  .tree-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .node {
+    background: #fff;
+    border: 1.5px solid #d4d4cd;
+    border-radius: 8px;
+    padding: 14px 18px;
+    min-width: 200px;
+    max-width: 240px;
+    position: relative;
+  }
+
+  .node.home {
+    min-width: 280px;
+    max-width: 300px;
+    border-color: #0d2e3f;
+    border-width: 2px;
+  }
+
+  .node-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0d2e3f;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .node-title .badge {
+    background: #3bb8c3;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+  }
+
+  .node-desc {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.45;
+  }
+
+  .node-url {
+    font-size: 10px;
+    color: #3bb8c3;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* ── Connector Line ── */
+  .connector {
+    width: 2px;
+    height: 20px;
+    background: #d4d4cd;
+    margin: 0 auto;
+  }
+
+  /* ── Nav Row ── */
+  .nav-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+
+  .nav-item {
+    background: #0d2e3f;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 130px;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-item .nav-desc {
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 3px;
+  }
+
+  .nav-item .status-bar {
+    margin-top: 6px;
+    justify-content: center;
+  }
+
+  /* ── Columns ── */
+  .columns {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* ── Grouping ── */
+  .group-box {
+    border: 1.5px dashed #ccc;
+    border-radius: 12px;
+    padding: 24px 16px 16px;
+    position: relative;
+  }
+
+  .group-box .group-label {
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    background: #f5f5f0;
+    padding: 0 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0d2e3f;
+    opacity: 0.5;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-top: 4px;
+  }
+
+  .tag.flagship { background: #0d2e3f; color: #fff; }
+  .tag.service { background: #d8f3f5; color: #1a8a8f; }
+  .tag.industry { background: #fef3dd; color: #a07020; }
+  .tag.seo { background: #fde0e0; color: #a03030; }
+  .tag.support { background: #eee; color: #666; }
+
+  hr {
+    border: none;
+    border-top: 1.5px solid #e0e0da;
+    margin: 40px 0;
+  }
+
+  .note {
+    background: #fffde6;
+    border: 1px solid #e8e0a0;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 12px;
+    color: #6b6530;
+    line-height: 1.5;
+    margin-top: 12px;
+    max-width: 860px;
+  }
+
+  .page-count {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0d2e3f;
+    margin-top: 32px;
+    padding: 10px 20px;
+    background: #e0f5f5;
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  .center { text-align: center; }
+
+  /* ── Progress Summary ── */
+  .progress-summary {
+    background: #fff;
+    border: 1.5px solid #d4d4cd;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+
+  .progress-summary-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0d2e3f;
+    margin-bottom: 16px;
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .progress-track {
+    flex: 1;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 300px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .progress-fill.design { background: #6366f1; }
+  .progress-fill.dev { background: #f59e0b; }
+  .progress-fill.seo-tag { background: #10b981; }
+  .progress-fill.content { background: #ef4444; }
+  .progress-fill.sanity { background: #8b5cf6; }
+  .progress-fill.content-created { background: #0ea5e9; }
+
+  .progress-pct {
+    font-size: 12px;
+    font-weight: 700;
+    color: #444;
+    min-width: 40px;
+  }
+
+  /* ── Content Strategy Section ── */
+  .content-section {
+    background: #fff;
+    border: 1.5px solid #d4d4cd;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+
+  .content-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0d2e3f;
+    margin-bottom: 4px;
+  }
+
+  .content-section-url {
+    font-size: 11px;
+    color: #3bb8c3;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .content-section p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .content-section strong {
+    color: #0f1c20;
+  }
+
+  .content-section ul {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    margin-left: 18px;
+    margin-bottom: 8px;
+  }
+
+  .content-section .seo-box {
+    background: #f0fdf4;
+    border: 1.5px solid #10b981;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+
+  .content-section .seo-box-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #059669;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .content-section .seo-box-title::before {
+    content: '✓';
+    background: #10b981;
+    color: #fff;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .content-section .seo-box p {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  /* ── Content Created box ── */
+  .content-section .content-created-box {
+    background: #f0f9ff;
+    border: 1.5px solid #0ea5e9;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+
+  .content-section .content-created-box-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0369a1;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .content-section .content-created-box-title::before {
+    content: '\2713';
+    background: #0ea5e9;
+    color: #fff;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .content-section .content-created-box p {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  /* ── Module block with preview thumbnail ── */
+  .module-block {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #bae6fd;
+  }
+
+  .module-block:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .module-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .module-preview {
+    flex-shrink: 0;
+    width: 200px;
+  }
+
+  .module-preview img {
+    width: 100%;
+    border-radius: 5px;
+    border: 1.5px solid #bae6fd;
+    display: block;
+  }
+
+  .module-preview-placeholder {
+    width: 200px;
+    height: 110px;
+    border: 1.5px dashed #bae6fd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #f8fbff;
+    color: #7dd3fc;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .module-preview-placeholder .preview-icon {
+    font-size: 18px;
+    opacity: 0.6;
+  }
+
+
+  /* ── Rings progress chart ── */
+  .progress-summary { display: flex; align-items: center; gap: 40px; }
+  .progress-bars-col { flex: 1; min-width: 0; }
+  .rings-chart-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0; }
+  .rings-svg-container { position: relative; width: 160px; height: 160px; }
+  .rings-svg-container svg { transform: rotate(-90deg); overflow: visible; }
+  .ring-bg { fill: none; stroke: #eeede8; stroke-width: 8; stroke-linecap: round; }
+  .ring-fill { fill: none; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
+  .rings-main { display: flex; flex-direction: row; align-items: center; gap: 14px; }
+  .rings-side-label { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 44px; }
+  .rings-overall-pct { display: block; font-size: 24px; font-weight: 700; color: #0d2e3f; line-height: 1; }
+  .rings-overall-label { display: block; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #bbb; margin-top: 4px; }
+  .rings-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+  .rings-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #777; font-weight: 500; white-space: nowrap; }
+  .rings-legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  
+  /* ── Anchor navigation ── */
+  html { scroll-behavior: smooth; }
+  [data-anchor] { cursor: pointer; }
+  .node[data-anchor] { transition: background 0.12s ease; }
+  .node[data-anchor]:hover { background: #fafaf6; }
+  .nav-item[data-anchor] { transition: background 0.12s ease; }
+  .nav-item[data-anchor]:hover { background: #1a3d58; }
+  [data-theme="dark"] .node[data-anchor]:hover { background: #1e1e1e; }
+  [data-theme="dark"] .nav-item[data-anchor]:hover { background: #161616; }
+
+  /* ══════════════════════════════════════════════════════
+     THEME TOGGLE BUTTON
+  ══════════════════════════════════════════════════════ */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1.5px solid #d4d4cd;
+    border-radius: 999px;
+    padding: 6px 14px 6px 10px;
+    cursor: pointer;
+    font-family: 'Geist', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    user-select: none;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+
+  .theme-toggle:hover { border-color: #999; }
+
+  .theme-toggle .toggle-track {
+    width: 34px;
+    height: 19px;
+    background: #ddd;
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.25s;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle .toggle-thumb {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  }
+
+  /* ══════════════════════════════════════════════════════
+     DARK MODE OVERRIDES
+  ══════════════════════════════════════════════════════ */
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  [data-theme="dark"] body {
+    background: #111111;
+    color: #e8e8e4;
+  }
+
+  /* Toggle button in dark mode */
+  [data-theme="dark"] .theme-toggle {
+    background: #1a1a1a;
+    border-color: #2e2e2e;
+    color: #666662;
+  }
+
+  [data-theme="dark"] .theme-toggle:hover { border-color: #484844; }
+
+  [data-theme="dark"] .theme-toggle .toggle-track {
+    background: #3bbfcc;
+  }
+
+  [data-theme="dark"] .theme-toggle .toggle-thumb {
+    transform: translateX(15px);
+  }
+
+  /* Header text */
+  [data-theme="dark"] .sitemap-title { color: #555552; }
+  [data-theme="dark"] .sitemap-subtitle { color: #e8e8e4; }
+  [data-theme="dark"] .sitemap-date { color: #555552; }
+  [data-theme="dark"] .sitemap-update { color: #444440; }
+
+  /* Legend box */
+  [data-theme="dark"] .legend-box {
+    background: #1a1a1a;
+    border-color: #2e2e2e;
+  }
+
+  [data-theme="dark"] .legend-box-title { color: #aaaaaa; }
+  [data-theme="dark"] .legend-grid .lg-header { color: #555552; border-bottom-color: #2e2e2e; }
+  [data-theme="dark"] .legend-grid .lg-label { color: #666662; }
+  [data-theme="dark"] .legend-grid .lg-status { color: #555552; }
+  [data-theme="dark"] .legend-phase-item { color: #cfcfca; }
+  [data-theme="dark"] .legend-status-row { border-top-color: #2e2e2e; }
+
+  /* Legend not-started state in dark */
+  [data-theme="dark"] .status-pill.not-started {
+    background: #171717;
+    border-color: #2e2e2e;
+    color: #484844;
+  }
+
+  /* Progress summary */
+  [data-theme="dark"] .progress-summary {
+    background: #1a1a1a;
+    border-color: #2e2e2e;
+  }
+
+  [data-theme="dark"] .progress-summary-title { color: #e8e8e4; }
+  [data-theme="dark"] .progress-label { color: #666662; }
+  [data-theme="dark"] .progress-track { background: #222222; }
+  [data-theme="dark"] .progress-pct { color: #666662; }
+
+  /* Section labels */
+  [data-theme="dark"] .section-label {
+    background: #222222;
+    color: #aaaaaa;
+  }
+
+  /* Nodes */
+  [data-theme="dark"] .node {
+    background: #1a1a1a;
+    border-color: #2e2e2e;
+  }
+
+  [data-theme="dark"] .node.home {
+    border-color: #3bbfcc;
+  }
+
+  [data-theme="dark"] .node-title { color: #e8e8e4; }
+  [data-theme="dark"] .node-desc { color: #5a8aa3; }
+  [data-theme="dark"] .node-url { color: #3bbfcc; }
+
+  /* Tags */
+  [data-theme="dark"] .tag.flagship { background: #222222; color: #aaaaaa; }
+  [data-theme="dark"] .tag.service { background: #1a1a1a; color: #3bbfcc; }
+  [data-theme="dark"] .tag.industry { background: #2a1f0a; color: #c8a040; }
+  [data-theme="dark"] .tag.seo { background: #2a0f0f; color: #e07070; }
+  [data-theme="dark"] .tag.support { background: #222222; color: #5a8aa3; }
+
+  /* Nav items */
+  [data-theme="dark"] .nav-item {
+    background: #0d0d0d;
+    border: 1px solid #2e2e2e;
+  }
+
+  [data-theme="dark"] .nav-item .nav-desc { color: rgba(156, 196, 216, 0.55); }
+
+  /* Connector lines */
+  [data-theme="dark"] .connector { background: #2e2e2e; }
+
+  /* Group box */
+  [data-theme="dark"] .group-box { border-color: #2e2e2e; }
+  [data-theme="dark"] .group-box .group-label {
+    background: #111111;
+    color: #555552;
+  }
+
+  /* Node badge */
+  [data-theme="dark"] .node-title .badge { background: #3bbfcc; }
+
+  /* HR */
+  [data-theme="dark"] hr { border-top-color: #2e2e2e; }
+
+  /* Note blocks */
+  [data-theme="dark"] .note {
+    background: #191919;
+    border-color: #2e2e2e;
+    color: #b8a848;
+  }
+
+  /* Page count */
+  [data-theme="dark"] .page-count {
+    background: #1a1a1a;
+    color: #aaaaaa;
+  }
+
+  /* Content strategy sections */
+  [data-theme="dark"] .content-section {
+    background: #1a1a1a;
+    border-color: #2e2e2e;
+  }
+
+  [data-theme="dark"] .content-section-title { color: #e8e8e4; }
+  [data-theme="dark"] .content-section-url { color: #3bbfcc; }
+
+  [data-theme="dark"] .content-section p {
+    color: #888884;
+  }
+
+  [data-theme="dark"] .content-section strong { color: #e8e8e4; }
+
+  [data-theme="dark"] .content-section ul {
+    color: #888884;
+  }
+
+  [data-theme="dark"] .content-section hr {
+    border-top-color: #2e2e2e;
+  }
+
+  /* SEO box */
+  [data-theme="dark"] .content-section .seo-box {
+    background: #0d1f14;
+    border-color: #1a4d30;
+  }
+
+  [data-theme="dark"] .content-section .seo-box-title { color: #34d399; }
+  [data-theme="dark"] .content-section .seo-box-title::before { background: #10b981; }
+
+  [data-theme="dark"] .content-section .seo-box p { color: #888884; }
+
+  .content-section .content-created-box.done {
+    background: #fff1f2;
+    border-color: #fda4af;
+  }
+  .content-section .content-created-box.done .content-created-box-title {
+    color: #be123c;
+  }
+  .content-section .content-created-box.done .content-created-box-title::before {
+    background: #f43f5e;
+  }
+
+  [data-theme="dark"] .content-section .content-created-box.done {
+    background: #2d0a10;
+    border-color: #9f1239;
+  }
+  [data-theme="dark"] .content-section .content-created-box.done .content-created-box-title {
+    color: #fb7185;
+  }
+  [data-theme="dark"] .content-section .content-created-box.done .content-created-box-title::before {
+    background: #f43f5e;
+  }
+
+  /* Content Created box — dark mode */
+  [data-theme="dark"] .content-section .content-created-box {
+    background: #0b1e2d;
+    border-color: #1a4d66;
+  }
+
+  [data-theme="dark"] .content-section .content-created-box-title { color: #38bdf8; }
+  [data-theme="dark"] .content-section .content-created-box-title::before { background: #0ea5e9; }
+  [data-theme="dark"] .content-section .content-created-box p { color: #888884; }
+
+  [data-theme="dark"] .module-block { border-bottom-color: #1a4d66; }
+  [data-theme="dark"] .module-preview img { border-color: #1a4d66; }
+  [data-theme="dark"] .module-preview-placeholder {
+    background: #071520;
+    border-color: #1a4d66;
+    color: #1e6a8a;
+  }
+
+
+  [data-theme="dark"] .ring-bg { stroke: #252525; }
+  [data-theme="dark"] .rings-overall-pct { color: #e8e8e4; }
+  [data-theme="dark"] .rings-overall-label { color: #484844; }
+  [data-theme="dark"] .rings-legend-item { color: #555552; }
+
+  /* ── Phase checklist ─────────────────────────────── */
+  .check-list { list-style: none; margin: 12px 0 0; padding: 0; }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 9px;
+    font-size: 12px; color: #555; line-height: 1.5;
+    padding: 5px 0;
+  }
+  .check-item input.phase-check { position: absolute; opacity: 0; width: 0; height: 0; }
+  .check-item .check-box {
+    flex: 0 0 auto; width: 16px; height: 16px; margin-top: 1px;
+    border: 1.5px solid #c8c8c2; border-radius: 4px; background: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .check-item .check-box::after {
+    content: "✓"; font-size: 11px; font-weight: 700; color: #fff;
+    transform: scale(0); transition: transform 0.15s ease;
+  }
+  .check-item input.phase-check:checked + .check-box {
+    background: #10b981; border-color: #10b981;
+  }
+  .check-item input.phase-check:checked + .check-box::after { transform: scale(1); }
+  .check-item input.phase-check:checked ~ .check-label {
+    color: #9a9a95; text-decoration: line-through;
+  }
+  /* clickable only in edit mode */
+  body.edit-mode .check-item { cursor: pointer; }
+  body.edit-mode .check-item:hover .check-box { border-color: #10b981; }
+  .check-item input.phase-check:focus-visible + .check-box { outline: 2px solid #6366f1; outline-offset: 2px; }
+
+  /* ── Per-phase progress bar ──────────────────────── */
+  .phase-progress { margin-top: 14px; }
+  .phase-progress-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: #999; margin-bottom: 5px;
+  }
+  .phase-progress-track {
+    height: 7px; border-radius: 4px; background: #ececec; overflow: hidden;
+  }
+  .phase-progress-fill {
+    height: 100%; width: 0; border-radius: 4px;
+    background: linear-gradient(90deg, #10b981, #059669);
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  /* Phase-colored bars: P1 emerald, P2 blue, P3 amber (matches overall widget) */
+  [data-phase="2"] .phase-progress-fill { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+  [data-phase="3"] .phase-progress-fill { background: linear-gradient(90deg, #f59e0b, #d97706); }
+
+  /* ── Edit-mode banner ────────────────────────────── */
+  .edit-banner {
+    display: none; position: sticky; top: 0; z-index: 50;
+    background: #0d2e3f; color: #eaf6fb;
+    font-size: 12px; line-height: 1.5;
+    padding: 10px 18px; border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    align-items: center; gap: 14px; flex-wrap: wrap;
+    max-width: 1100px; margin: 0 auto;
+  }
+  body.edit-mode .edit-banner { display: flex; }
+  .edit-banner strong { color: #fff; }
+  .edit-banner .eb-badge {
+    background: #10b981; color: #04241a; font-weight: 700;
+    padding: 2px 8px; border-radius: 999px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .edit-banner button {
+    margin-left: auto; background: #10b981; color: #04241a; border: none;
+    font-weight: 700; font-size: 11px; padding: 6px 12px; border-radius: 6px;
+    cursor: pointer; transition: background 0.15s ease;
+  }
+  .edit-banner button:hover { background: #34d399; }
+
+  [data-theme="dark"] .check-item { color: #888; }
+  [data-theme="dark"] .check-item .check-box { background: #1a1a1a; border-color: #3a3a3a; }
+  [data-theme="dark"] .phase-progress-track { background: #222; }
+  [data-theme="dark"] .check-item input.phase-check:checked ~ .check-label { color: #5a5a56; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- EDIT-MODE BANNER (only visible with #edit in URL) -->
+<!-- ═══════════════════════════════════════ -->
+<div class="edit-banner" id="editBanner">
+  <span class="eb-badge">Edit mode</span>
+  <span><strong>You can tick milestone checkboxes.</strong> Changes are saved to this browser only. To publish to the client, click Copy progress and send it to Claude to commit.</span>
+  <button type="button" id="copyProgressBtn">Copy progress</button>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="header">
+  <div class="header-left">
+    <p class="sitemap-title">Fishless Desert</p>
+    <h1 class="sitemap-subtitle">Sitemap &amp; Project Status Tracker</h1>
+    <p class="sitemap-date">Last updated: August 14, 2026</p>
+    <p class="sitemap-update">↳ Tracker created from the accepted proposal. Scope, phases, sitemap, and content strategy loaded. Kickoff August 20, 2026.</p>
+  </div>
+
+
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle light / dark mode">
+    <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    <span id="themeLabel">Dark Mode</span>
+  </button>
+
+  <div class="legend-box">
+    <div class="legend-box-title">Status Indicators</div>
+    <div class="legend-phase-list">
+      <div class="legend-phase-item"><span class="legend-phase-dot" style="background:#10b981"></span> Phase 1 — Platform &amp; Design Foundation</div>
+      <div class="legend-phase-item"><span class="legend-phase-dot" style="background:#3b82f6"></span> Phase 2 — Design &amp; Development</div>
+      <div class="legend-phase-item"><span class="legend-phase-dot" style="background:#f59e0b"></span> Phase 3 — Deployment &amp; Launch</div>
+    </div>
+
+    <div class="legend-status-row">
+      <span class="status-pill not-started" style="margin:0;"><span class="pill-icon">○</span> Not Started</span>
+      <span class="status-pill in-progress" style="margin:0;"><span class="pill-icon">◐</span> In Progress</span>
+      <span class="status-pill completed" style="margin:0;"><span class="pill-icon">✓</span> Completed</span>
+    </div>
+    <div class="legend-status-note">Applies to each phase and its milestones.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- OVERALL PROGRESS -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="progress-summary">
+  <div class="progress-bars-col">
+  <div class="progress-summary-title">Overall Project Progress</div>
+  <div style="font-size: 11px; color: #999; margin: -6px 0 14px;">Each bar shows progress <strong>within that phase</strong>. The wheel shows <strong>overall project completion</strong> (phases weighted by length), so early on it reads lower than any single phase's bar.</div>
+
+  <div class="progress-row">
+    <div class="progress-label"><span class="dot" style="background:#10b981"></span> Phase 1 — Platform &amp; Design Foundation</div>
+    <div class="progress-track"><div class="progress-fill obar" id="obar-1" style="width: 0%; background:#10b981;"></div></div>
+    <div class="progress-pct" id="opct-1">0%</div>
+  </div>
+
+  <div class="progress-row">
+    <div class="progress-label"><span class="dot" style="background:#3b82f6"></span> Phase 2 — Design &amp; Development</div>
+    <div class="progress-track"><div class="progress-fill obar" id="obar-2" style="width: 0%; background:#3b82f6;"></div></div>
+    <div class="progress-pct" id="opct-2">0%</div>
+  </div>
+
+  <div class="progress-row">
+    <div class="progress-label"><span class="dot" style="background:#f59e0b"></span> Phase 3 — Deployment &amp; Launch</div>
+    <div class="progress-track"><div class="progress-fill obar" id="obar-3" style="width: 0%; background:#f59e0b;"></div></div>
+    <div class="progress-pct" id="opct-3">0%</div>
+  </div>
+  </div>
+  <div class="rings-chart-wrap">
+    <div class="rings-main">
+      <div class="rings-side-label">
+        <span class="rings-overall-pct" id="pieOverallPct">0%</span>
+        <span class="rings-overall-label">of whole<br>project</span>
+      </div>
+      <div class="rings-svg-container">
+        <svg viewBox="0 0 160 160" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+          <circle class="ring-bg" cx="80" cy="80" r="60"/>
+          <circle class="ring-bg" cx="80" cy="80" r="46"/>
+          <circle class="ring-bg" cx="80" cy="80" r="32"/>
+          <circle id="oring-1" class="ring-fill" cx="80" cy="80" r="60" stroke="#10b981"/>
+          <circle id="oring-2" class="ring-fill" cx="80" cy="80" r="46" stroke="#3b82f6"/>
+          <circle id="oring-3" class="ring-fill" cx="80" cy="80" r="32" stroke="#f59e0b"/>
+        </svg>
+      </div>
+    </div>
+    <div class="rings-legend" style="grid-template-columns: 1fr;">
+      <div class="rings-legend-item"><span class="rings-legend-dot" style="background:#10b981"></span>Phase 1 — Platform &amp; Design Foundation</div>
+      <div class="rings-legend-item"><span class="rings-legend-dot" style="background:#3b82f6"></span>Phase 2 — Design &amp; Development</div>
+      <div class="rings-legend-item"><span class="rings-legend-dot" style="background:#f59e0b"></span>Phase 3 — Deployment &amp; Launch</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PROJECT SCOPE & MILESTONES -->
+<!-- ============================================ -->
+
+<div class="section">
+  <div class="section-label">🚀 Project Scope &amp; Milestones</div>
+
+  <div class="note" style="margin-bottom: 24px;">
+    <strong>Engagement:</strong> Fishless Desert, New Company Site &amp; Sanity Migration (Forefathers Group).&nbsp;
+    <strong>Timeline:</strong> 4 weeks, August 20 to September 16, 2026.&nbsp;
+    <br><br>
+    The Fishless Desert website is being completely redesigned and migrated from Webflow to a modern Sanity-powered platform. The work covers a focused Figma design sprint across the primary site experience, a reusable design and component system, migration of existing content, responsive development, testing, optimization, and launch. Every page is structured so it reads clearly for both visitors and AI-powered search.
+    <strong>Current status: Not started. Kickoff scheduled for August 20, 2026.</strong>
+  </div>
+
+  <div class="columns">
+
+    <div class="column">
+      <div class="group-box" data-phase="1">
+        <div class="group-label">Phase 1 — Platform &amp; Design Foundation</div>
+        <div class="node" style="margin-top: 8px;">
+          <div class="node-desc">Weeks 1 to 2 · Aug 20 – Sep 2, 2026</div>
+          <div class="status-bar">
+            <span class="status-pill not-started phase-status"><span class="pill-icon">○</span> Not Started</span>
+          </div>
+          <ul class="check-list">
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-1"><span class="check-box"></span><span class="check-label">Migrate Fishless Desert from Webflow to Sanity CMS</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-2"><span class="check-box"></span><span class="check-label">Configure the new Sanity content architecture</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-3"><span class="check-box"></span><span class="check-label">Establish scalable, reusable content structures</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-4"><span class="check-box"></span><span class="check-label">Migrate and reorganize existing website content</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-5"><span class="check-box"></span><span class="check-label">Stand up the modern headless website foundation</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-6"><span class="check-box"></span><span class="check-label">Figma sprint: refresh the overall visual experience</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-7"><span class="check-box"></span><span class="check-label">Design updated navigation, header, and footer systems</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-8"><span class="check-box"></span><span class="check-label">Establish reusable layout and content modules</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p1-9"><span class="check-box"></span><span class="check-label">Create a consistent design system for the new site</span></label></li>
+          </ul>
+          <div class="phase-progress">
+            <div class="phase-progress-head"><span>Phase progress</span><span class="phase-progress-pct">0%</span></div>
+            <div class="phase-progress-track"><div class="phase-progress-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="group-box" data-phase="2">
+        <div class="group-label">Phase 2 — Design &amp; Development</div>
+        <div class="node" style="margin-top: 8px;">
+          <div class="node-desc">Weeks 2 to 3 · Aug 27 – Sep 9, 2026</div>
+          <div class="status-bar">
+            <span class="status-pill not-started phase-status"><span class="pill-icon">○</span> Not Started</span>
+          </div>
+          <ul class="check-list">
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-1"><span class="check-box"></span><span class="check-label">Design and develop the Home / Projects page</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-2"><span class="check-box"></span><span class="check-label">Build the project detail modal experience</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-3"><span class="check-box"></span><span class="check-label">Design and develop the About page</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-4"><span class="check-box"></span><span class="check-label">Design and develop the Contact page</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-5"><span class="check-box"></span><span class="check-label">Build the navigation system, header, and footer</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-6"><span class="check-box"></span><span class="check-label">Build reusable content sections and modules</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-7"><span class="check-box"></span><span class="check-label">Responsive desktop, tablet, and mobile builds</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-8"><span class="check-box"></span><span class="check-label">Integrate all site content with Sanity CMS</span></label></li>
+          </ul>
+          <div class="phase-progress">
+            <div class="phase-progress-head"><span>Phase progress</span><span class="phase-progress-pct">0%</span></div>
+            <div class="phase-progress-track"><div class="phase-progress-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="group-box" data-phase="3">
+        <div class="group-label">Phase 3 — Deployment &amp; Launch</div>
+        <div class="node" style="margin-top: 8px;">
+          <div class="node-desc">Week 4 · Sep 10 – Sep 16, 2026</div>
+          <div class="status-bar">
+            <span class="status-pill not-started phase-status"><span class="pill-icon">○</span> Not Started</span>
+          </div>
+          <ul class="check-list">
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-1"><span class="check-box"></span><span class="check-label">Full responsive testing across desktop, tablet, and mobile</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-2"><span class="check-box"></span><span class="check-label">Cross-browser quality assurance</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-3"><span class="check-box"></span><span class="check-label">Content review and final revisions</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-4"><span class="check-box"></span><span class="check-label">SEO foundation and metadata configuration</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-5"><span class="check-box"></span><span class="check-label">Performance and page-speed optimization</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-6"><span class="check-box"></span><span class="check-label">Production Sanity, domain, and DNS configuration</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-7"><span class="check-box"></span><span class="check-label">Webflow to Sanity production cutover and launch</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p3-8"><span class="check-box"></span><span class="check-label">Sanity CMS walkthrough, training, and client handoff</span></label></li>
+          </ul>
+          <div class="phase-progress">
+            <div class="phase-progress-head"><span>Phase progress</span><span class="phase-progress-pct">0%</span></div>
+            <div class="phase-progress-track"><div class="phase-progress-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<!-- ============================================ -->
+<!-- SECTION 1: WEBSITE SITEMAP -->
+<!-- ============================================ -->
+
+<div class="section">
+  <div class="section-label">🏠 Fishless Desert — Website Sitemap</div>
+
+  <div class="note" style="margin-bottom: 24px;">
+    <strong>New structure:</strong> the site consolidates into a single Home / Projects experience with project detail delivered in a modal, plus About and Contact. Every page and project is driven by Sanity, so new developments are added by the client without a rebuild.&nbsp;
+    <strong>Legacy Webflow URLs</strong> (/about-fishless-desert, /properties/our-work, /properties/[slug], /faq) get 301 redirects at cutover so existing rankings and inbound links carry over.
+  </div>
+
+  <div class="tree-root">
+    <div class="node home">
+      <div class="node-title">HOME / PROJECTS</div>
+      <div class="node-desc">Flagship single-page experience: positioning ("rebuilding the places long since forgotten"), what we do, the selected works grid, who we are, and the closing contact CTA. Project cards open the detail modal in place.</div>
+      <div class="node-url">/</div>
+      <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="nav-row">
+      <div class="nav-item">Our Work<div class="nav-desc">Anchors to the selected works grid on the homepage</div></div>
+      <div class="nav-item">About<div class="nav-desc">Company story, leadership, track record</div>
+        <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+        </div>
+      </div>
+      <div class="nav-item">Contact<div class="nav-desc">Enquiry form and Tulsa office details</div>
+        <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 20px;"></div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="group-box">
+          <div class="group-label">Project Experience</div>
+          <div class="node">
+            <div class="node-title">Project Detail Modal</div>
+            <div class="node-desc">Reusable modal template driven by Sanity: hero imagery, location, project type, scope, square footage, status, and narrative. One template serves every development, from Santa Fe Square to the Route 66 infill work.</div>
+            <div class="node-url">/#project/[slug]</div>
+            <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="group-box">
+          <div class="group-label">Core Pages</div>
+          <div class="node">
+            <div class="node-title">Home / Projects <span class="badge">FLAGSHIP</span></div>
+            <div class="node-desc">The primary conversion surface. Combines positioning, services, and the full portfolio in one scroll, with the project modal layered on top.</div>
+            <div class="node-url">/</div>
+            <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+            </div>
+          </div>
+          <div class="node">
+            <div class="node-title">About</div>
+            <div class="node-desc">Founding story, the Hemingway reference behind the name, leadership profiles for Elliot Nelson and Matt Newman, and the track record numbers that establish credibility.</div>
+            <div class="node-url">/about</div>
+            <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="group-box">
+          <div class="group-label">Standalone Pages</div>
+          <div class="node">
+            <div class="node-title">Contact</div>
+            <div class="node-desc">Enquiry form routed to the team, Tulsa office address, and a short FAQ block covering partnership and development questions carried over from the legacy FAQ page.</div>
+            <div class="node-url">/contact</div>
+            <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ============================================ -->
+<!-- SECTION 2: PAGE CONTENT STRATEGY -->
+<!-- ============================================ -->
+
+<div class="section">
+  <div class="section-label">📋 Page Content Strategy &amp; SEO/AEO Structure</div>
+
+  <div class="note" style="margin-bottom: 24px;">
+    Four pages carry the whole site, so each one has to work harder than it would on a larger sitemap. Titles stay under 60 characters, meta descriptions under 155. Every page leads with a plain one-sentence definition that an AI answer engine can lift directly, and the schema below is implemented as JSON-LD through Sanity.
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">🏠 Home / Projects</div>
+    <div class="content-section-url">/</div>
+    <p><strong>Purpose:</strong> Establish Fishless Desert as the developer that takes on the buildings and blocks nobody else will, prove it with the portfolio, and route serious partners, brokers, and municipalities to the contact form.</p>
+
+    <div class="seo-box">
+      <div class="seo-box-title">SEO / AEO Strategy</div>
+      <p><strong>SEO Title:</strong> Urban Infill Development in Tulsa | Fishless Desert</p>
+      <p><strong>Meta Description:</strong> Fishless Desert is a Tulsa real estate developer rebuilding forgotten urban places through infill, historic rehabilitation, and mixed-use projects.</p>
+      <p><strong>Primary Keywords:</strong> urban infill development Tulsa, Tulsa real estate developer, urban revitalization Oklahoma, mixed-use development Tulsa</p>
+      <p><strong>Schema:</strong> Organization, ItemList (project portfolio), BreadcrumbList</p>
+      <p><strong>AEO Targets:</strong> "Who develops urban infill projects in Tulsa?" · "What does Fishless Desert do?" · "Which company developed Boxyard Tulsa?"</p>
+    </div>
+
+    <div class="content-created-box">
+      <div class="content-created-box-title">Content Created</div>
+      <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
+
+      <p><strong>📌 Module 1 — Hero</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Rebuilding the places long since forgotten.</li>
+        <li><strong>Body:</strong> Fishless Desert is a multidisciplinary real estate company focused on urban infill and revitalization across Oklahoma and the south-central United States.</li>
+        <li><strong>CTA:</strong> "See our work" scrolls to the portfolio grid. Secondary "Let's talk" goes to /contact.</li>
+      </ul>
+
+      <p><strong>📌 Module 2 — What We Do</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> From first site walk to ribbon cutting.</li>
+        <li><strong>Body:</strong> Four service pillars: planning and due diligence, tax credit capital stack formation, public incentive procurement, and construction management.</li>
+        <li><strong>CTA:</strong> None. This module feeds the AI answer layer and sets up the portfolio.</li>
+      </ul>
+
+      <p><strong>📌 Module 3 — Selected Works</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Transforming cities through placemaking.</li>
+        <li><strong>Body:</strong> Sanity-driven grid of every development: Santa Fe Square, Maple Ridge, The Boxyard, Cheyenne Megaspace, The Coliseum, McNellie's Pub Courtyard, Midland, SoBo Infill, and 11th Street Route 66. Cards open the project modal.</li>
+        <li><strong>CTA:</strong> Card click opens the project detail modal.</li>
+      </ul>
+
+      <p><strong>📌 Module 4 — Who We Are</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Two decades of betting on downtown Tulsa.</li>
+        <li><strong>Body:</strong> Credibility block: 30+ historic rehabilitation projects and roughly $430 million in urban infill work across multifamily, office, and retail.</li>
+        <li><strong>CTA:</strong> "Meet our team" goes to /about.</li>
+      </ul>
+
+      <p><strong>📌 Module 5 — Ready to Start</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Have a building everyone else has written off?</li>
+        <li><strong>Body:</strong> Short invitation aimed at property owners, brokers, and municipal partners.</li>
+        <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">🗂️ Project Detail Modal</div>
+    <div class="content-section-url">/#project/[slug]</div>
+    <p><strong>Purpose:</strong> Give each development enough depth to satisfy a prospective partner or journalist without sending the visitor to a separate page, and give search and AI engines a clean, structured record of who built what.</p>
+
+    <div class="seo-box">
+      <div class="seo-box-title">SEO / AEO Strategy</div>
+      <p><strong>SEO Title:</strong> [Project Name] | Fishless Desert (example: Boxyard Tulsa | Fishless Desert)</p>
+      <p><strong>Meta Description:</strong> Pattern: [Project Name] in [Location]: a [project type] development by Fishless Desert. [One line on scope and outcome.]</p>
+      <p><strong>Primary Keywords:</strong> [project name], [project name] developer, [neighborhood] development Tulsa</p>
+      <p><strong>Schema:</strong> Place, CreativeWork, BreadcrumbList</p>
+      <p><strong>AEO Targets:</strong> "What is Boxyard Tulsa?" · "Who developed Santa Fe Square?" · "How big is Santa Fe Square?"</p>
+    </div>
+
+    <div class="content-created-box">
+      <div class="content-created-box-title">Content Created</div>
+      <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
+
+      <p><strong>📌 Module 1 — Modal header</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> [Project Name]</li>
+        <li><strong>Body:</strong> Location, project type, and status as a metadata row. One plain definition sentence sits directly under it, liftable by AI: "[Project Name] is a [type] development in [location] by Fishless Desert."</li>
+        <li><strong>CTA:</strong> Close returns to the portfolio grid with scroll position preserved.</li>
+      </ul>
+
+      <p><strong>📌 Module 2 — The story</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> What it took.</li>
+        <li><strong>Body:</strong> The condition of the site before, the financing and incentive structure used, and what the finished project delivers to the neighborhood.</li>
+        <li><strong>CTA:</strong> None.</li>
+      </ul>
+
+      <p><strong>📌 Module 3 — By the numbers</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Project facts.</li>
+        <li><strong>Body:</strong> Structured Sanity fields: square footage, unit or key count, parking, completion year, partners. Santa Fe Square carries 183,000+ sq ft of commercial space, 184 apartments, a 93-room hotel, and parking for 700 vehicles.</li>
+        <li><strong>CTA:</strong> None.</li>
+      </ul>
+
+      <p><strong>📌 Module 4 — Gallery</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> None. Imagery carries this block.</li>
+        <li><strong>Body:</strong> Before and after imagery where available, all with descriptive alt text.</li>
+        <li><strong>CTA:</strong> "Next project" advances to the following development without closing the modal.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">👥 About</div>
+    <div class="content-section-url">/about</div>
+    <p><strong>Purpose:</strong> Convert credibility into trust. A partner deciding whether to bring Fishless Desert a complicated deal needs to see the track record and the people behind it.</p>
+
+    <div class="seo-box">
+      <div class="seo-box-title">SEO / AEO Strategy</div>
+      <p><strong>SEO Title:</strong> About Our Tulsa Development Team | Fishless Desert</p>
+      <p><strong>Meta Description:</strong> Founded by Elliot Nelson, Fishless Desert has delivered 30+ historic rehabilitations and roughly $430 million in urban infill across Oklahoma.</p>
+      <p><strong>Primary Keywords:</strong> Elliot Nelson developer, Fishless Desert team, Tulsa development company, historic rehabilitation Oklahoma</p>
+      <p><strong>Schema:</strong> AboutPage, Organization, Person (Elliot Nelson, Matt Newman)</p>
+      <p><strong>AEO Targets:</strong> "Who founded Fishless Desert?" · "Who is Elliot Nelson?" · "Why is it called Fishless Desert?"</p>
+    </div>
+
+    <div class="content-created-box">
+      <div class="content-created-box-title">Content Created</div>
+      <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
+
+      <p><strong>📌 Module 1 — Origin</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> The name comes from a Hemingway line about erosion and abandonment.</li>
+        <li><strong>Body:</strong> Opens with the plain definition sentence, then the two-decade story of revitalizing a deteriorated stretch of downtown Tulsa.</li>
+        <li><strong>CTA:</strong> None.</li>
+      </ul>
+
+      <p><strong>📌 Module 2 — Leadership</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Who we are.</li>
+        <li><strong>Body:</strong> Elliot Nelson, Founder and CEO, who also leads McNellie's Group across 24 restaurants serving more than 10 million customers in 19 years. Matt Newman, Vice President of Development, with 18+ years and over $200 million in projects, specializing in mixed-use work involving zoning changes and complex tax credit financing.</li>
+        <li><strong>CTA:</strong> None. Each profile is marked up as Person schema.</li>
+      </ul>
+
+      <p><strong>📌 Module 3 — How we work</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Our approach, in four steps.</li>
+        <li><strong>Body:</strong> Numbered process covering planning and due diligence, capital stack formation, incentive procurement, and construction management. Numbered so it qualifies for HowTo schema.</li>
+        <li><strong>CTA:</strong> "See the work" goes to the homepage portfolio.</li>
+      </ul>
+
+      <p><strong>📌 Module 4 — Track record</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> The numbers.</li>
+        <li><strong>Body:</strong> 30+ historic rehabilitation projects, roughly $430 million in urban infill, and a portfolio spanning office, restaurant, retail, hospitality, mixed-use, and residential.</li>
+        <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">✉️ Contact</div>
+    <div class="content-section-url">/contact</div>
+    <p><strong>Purpose:</strong> Make it easy for the right enquiry (property owners, brokers, municipal partners, press) to reach the team, and filter the rest with a clear form.</p>
+
+    <div class="seo-box">
+      <div class="seo-box-title">SEO / AEO Strategy</div>
+      <p><strong>SEO Title:</strong> Contact Fishless Desert | Tulsa Development</p>
+      <p><strong>Meta Description:</strong> Get in touch with the Fishless Desert development team in Tulsa about a property, a partnership, or a redevelopment opportunity.</p>
+      <p><strong>Primary Keywords:</strong> contact Fishless Desert, Tulsa developer contact, Tulsa development partnership</p>
+      <p><strong>Schema:</strong> ContactPage, LocalBusiness (Tulsa office), FAQPage</p>
+      <p><strong>AEO Targets:</strong> "How do I contact Fishless Desert?" · "Where is Fishless Desert located?" · "Does Fishless Desert take on outside projects?"</p>
+    </div>
+
+    <div class="content-created-box">
+      <div class="content-created-box-title">Content Created</div>
+      <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
+
+      <p><strong>📌 Module 1 — Enquiry form</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Let's talk.</li>
+        <li><strong>Body:</strong> Name, email, enquiry type (property, partnership, press, other), and message. Enquiry type routes the notification to the right person.</li>
+        <li><strong>CTA:</strong> "Send" with an inline confirmation state, no redirect to a thank-you page.</li>
+      </ul>
+
+      <p><strong>📌 Module 2 — Office</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Find us.</li>
+        <li><strong>Body:</strong> 608 E. 3rd St, Tulsa, Oklahoma, with a map embed and LocalBusiness markup.</li>
+        <li><strong>CTA:</strong> "Get directions" opens the map.</li>
+      </ul>
+
+      <p><strong>📌 Module 3 — FAQ</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Common questions.</li>
+        <li><strong>Body:</strong> Carries over the strongest questions from the legacy FAQ page, covering what kinds of projects Fishless Desert takes on, how partnerships work, and the geographies served. Marked up as FAQPage.</li>
+        <li><strong>CTA:</strong> None.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<!-- ============================================ -->
+<!-- SECTION 3: MASTER KNOWLEDGE BASE -->
+<!-- ============================================ -->
+
+<div class="section">
+  <div class="section-label">🗂️ Fishless Desert — Master Knowledge Base</div>
+
+  <div class="note" style="margin-bottom: 24px;">
+    <strong>Compiled from:</strong> the accepted proposal (Fishless Desert, New Company Site &amp; Sanity Migration, August 12, 2026) and the existing Webflow site at fishlessdesert.com.
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">Company Overview</div>
+    <ul>
+      <li><strong>Full Name:</strong> Fishless Desert Development</li>
+      <li><strong>What they do:</strong> A multidisciplinary real estate company focused on urban infill and revitalization across Oklahoma and the south-central United States.</li>
+      <li><strong>HQ:</strong> 608 E. 3rd St, Tulsa, Oklahoma</li>
+      <li><strong>Website:</strong> fishlessdesert.com</li>
+      <li><strong>Email:</strong> allison@fishlessdesert.com</li>
+      <li><strong>Key contacts:</strong> Elliot Nelson (Founder and CEO), Allison (day-to-day project contact), Matt Newman (Vice President of Development)</li>
+      <li><strong>Current platform:</strong> Webflow, migrating to Sanity CMS as part of this engagement</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">Key Services</div>
+    <ul>
+      <li><strong>Planning and due diligence:</strong> Site assessment and feasibility for infill and historic properties.</li>
+      <li><strong>Tax credit capital stack formation:</strong> Structuring financing for projects conventional lenders will not underwrite alone.</li>
+      <li><strong>Public incentive procurement:</strong> Securing municipal and state incentives for redevelopment.</li>
+      <li><strong>Construction management:</strong> Carrying projects from entitlement through delivery.</li>
+      <li><strong>Asset types:</strong> Office, restaurant, retail, hospitality, mixed-use, and residential.</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">Brand &amp; Positioning</div>
+    <ul>
+      <li><strong>Tagline:</strong> "Rebuilding the places long since forgotten."</li>
+      <li><strong>Name origin:</strong> A Hemingway line about erosion and abandonment.</li>
+      <li><strong>Mission:</strong> Making cities better through sensible design, focused on the neighborhoods that most need redevelopment.</li>
+      <li><strong>Positioning line:</strong> "Transforming cities through placemaking."</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">Track Record</div>
+    <ul>
+      <li>More than 30 historic rehabilitation projects completed.</li>
+      <li>Roughly $430 million in urban infill work across multifamily, office, and retail.</li>
+      <li><strong>Elliot Nelson:</strong> Also leads McNellie's Group, a hospitality company with 24 restaurants that has served more than 10 million customers in 19 years.</li>
+      <li><strong>Matt Newman:</strong> 18+ years in real estate and construction, leading over $200 million in development, specializing in mixed-use work involving zoning changes and complex tax credit financing.</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">Portfolio</div>
+    <ul>
+      <li><strong>Santa Fe Square:</strong> Flagship mixed-use development. 183,000+ sq ft of commercial space, 184 apartments, a 93-room hotel, and parking for 700 vehicles.</li>
+      <li><strong>The Boxyard:</strong> Urban retail development in Tulsa built from shipping containers.</li>
+      <li><strong>Cheyenne Megaspace:</strong> Retail development in Tulsa.</li>
+      <li><strong>Maple Ridge:</strong> Historic renovation in Tulsa.</li>
+      <li><strong>Others:</strong> The Coliseum, McNellie's Pub Courtyard, Midland, SoBo Infill Development, and the 11th Street Route 66 Infill Development.</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">Engagement Details</div>
+    <ul>
+      <li><strong>Project:</strong> New company site and Webflow to Sanity migration.</li>
+      <li><strong>Agency:</strong> Forefathers Group, 524 Prince St, Bordentown, New Jersey 08505.</li>
+      <li><strong>Proposal sent:</strong> August 12, 2026. <strong>Accepted:</strong> August 13, 2026.</li>
+      <li><strong>Timeline:</strong> 4 weeks. Start August 20, 2026, estimated completion September 16, 2026.</li>
+      <li><strong>Legacy URLs needing redirects:</strong> /about-fishless-desert, /properties/our-work, /properties/[slug], /faq</li>
+    </ul>
+  </div>
+
+</div>
+
+<hr>
+
+<!-- ============================================ -->
+<!-- SUMMARY -->
+<!-- ============================================ -->
+
+<div class="center">
+  <div class="page-count">4 pages tracked &nbsp;·&nbsp; 24 status items across 6 categories &nbsp;·&nbsp; 25 milestones across 3 phases</div>
+</div>
+
+<div style="height: 24px;"></div>
+
+<!-- ============================================ -->
+<!-- HOW THIS TRACKER WORKS -->
+<!-- ============================================ -->
+
+<div class="note" style="margin: 0 auto; max-width: 860px;">
+  <strong>How This Tracker Works:</strong><br><br>
+  <strong>1. Phases:</strong> Work is delivered in 3 milestone phases. The phase pill shows where the project is today; the overall donut is the weighted total across all phases.<br><br>
+  <strong>2. Editing:</strong> Open the live URL with <code>#edit</code> on the end to tick milestone checkboxes, then click <strong>Copy progress</strong> and paste it to Claude to publish. The plain URL stays read-only for the client.<br><br>
+  <strong>3. Status updates:</strong> To mark a page category done (Design, Dev, SEO, Content, Sanity, Created), tell Claude the page and category. Claude flips the pill ○ → ◐ → ✓ and the progress recalculates automatically.<br><br>
+  <strong>4. Content strategy:</strong> Each page in the content section uses the box hierarchy — plain-text Purpose on top, then the <strong style="color:#059669;">green SEO/AEO box</strong>, then the <strong style="color:#0369a1;">blue Content Created box</strong>. The two boxes are siblings, never nested.<br><br>
+  <strong>5. Progress:</strong> Never remove progress already marked complete. Progress only moves forward unless you say to reset.
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ANIMATION SCRIPT -->
+<!-- ═══════════════════════════════════════ -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Generic bars only; the phase (.obar) bars are driven by the milestone module.
+    var fills = document.querySelectorAll('.progress-fill:not(.obar)');
+    fills.forEach(function(fill) {
+      var target = fill.getAttribute('data-target') || fill.style.width;
+      fill.setAttribute('data-target', target);
+      fill.style.width = '0%';
+    });
+    setTimeout(function() {
+      fills.forEach(function(fill, i) {
+        setTimeout(function() {
+          fill.style.width = fill.getAttribute('data-target');
+        }, i * 200);
+      });
+    }, 500);
+  });
+  // ── Theme toggle ──────────────────────────────────────────────
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('themeLabel').textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    localStorage.setItem('trackerTheme', isDark ? 'light' : 'dark');
+  }
+
+  // Apply saved theme on load
+  (function() {
+    const saved = localStorage.getItem('trackerTheme') || 'light';
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      // Label updated after DOM ready
+      document.addEventListener('DOMContentLoaded', function() {
+        const label = document.getElementById('themeLabel');
+        if (label) label.textContent = 'Light Mode';
+      });
+    }
+  })();
+
+  // ── Ring chart ──
+  // The 3 phase rings + phase bars + centre % are all driven by the milestone
+  // module below (updateOverall). Nothing to init here.
+
+
+  // ── Anchor link navigation ──
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('[data-anchor]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var target = document.getElementById(el.getAttribute('data-anchor'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  });
+
+  // Mark content-created-box as done (light red) when node has completed content pill
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('[data-anchor]').forEach(function(node) {
+      if (node.querySelector('.status-pill.completed.content')) {
+        var section = document.getElementById(node.getAttribute('data-anchor'));
+        if (section) {
+          var box = section.querySelector('.content-created-box');
+          if (box) box.classList.add('done');
+        }
+      }
+    });
+  });
+
+  // ── Milestone checklists ──────────────────────────────────────
+  // Source of truth = committed markup (checkbox `checked` attributes).
+  // Client on the plain URL sees read-only boxes. Adding #edit to the URL
+  // unlocks clicking; edits persist to THIS browser's localStorage only,
+  // and publish to the client when the file is pushed.
+  (function() {
+    var LS_KEY = 'cxcPhaseChecks';
+    var EDIT = /(?:^|[#&])edit(?:$|[&=])/.test(location.hash) || location.hash === '#edit';
+    var checks = Array.prototype.slice.call(document.querySelectorAll('.phase-check'));
+    if (!checks.length) return;
+
+    function loadStore() {
+      try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; }
+      catch (e) { return {}; }
+    }
+    function saveStore(store) {
+      try { localStorage.setItem(LS_KEY, JSON.stringify(store)); } catch (e) {}
+    }
+
+    // Enable editing + apply saved overrides only in edit mode
+    if (EDIT) {
+      document.body.classList.add('edit-mode');
+      var store = loadStore();
+      checks.forEach(function(cb) {
+        if (Object.prototype.hasOwnProperty.call(store, cb.id)) cb.checked = !!store[cb.id];
+      });
+    } else {
+      // Client view: read-only, always reflects committed markup
+      checks.forEach(function(cb) { cb.disabled = true; });
+    }
+
+    function setPill(pill, state, label) {
+      if (!pill) return;
+      var icon = state === 'completed' ? '✓' : (state === 'in-progress' ? '◐' : '○');
+      pill.className = 'status-pill ' + state + ' phase-status';
+      pill.innerHTML = '<span class="pill-icon">' + icon + '</span> ' + label;
+    }
+
+    function refreshPhase(box) {
+      var boxes = box.querySelectorAll('.phase-check');
+      var total = boxes.length;
+      var done = 0;
+      boxes.forEach(function(cb) { if (cb.checked) done++; });
+      var pct = total ? Math.round(done / total * 100) : 0;
+
+      var fill = box.querySelector('.phase-progress-fill');
+      var pctEl = box.querySelector('.phase-progress-pct');
+      if (fill) fill.style.width = pct + '%';
+      if (pctEl) pctEl.textContent = pct + '%';
+
+      var pill = box.querySelector('.phase-status');
+      var active = box.getAttribute('data-active') === 'true';
+      if (done === total && total > 0) setPill(pill, 'completed', 'Completed');
+      else if (done > 0 || active)     setPill(pill, 'in-progress', 'In Progress');
+      else                             setPill(pill, 'not-started', 'Not Started');
+    }
+
+    // Overall project progress = phase completion weighted by phase length
+    // (Phase 1 = 2wk, Phase 2 = 3wk, Phase 3 = 1wk). Drives the donut centre.
+    var PHASE_WEIGHTS = { '1': 2, '2': 2, '3': 1 };
+
+    // Hide the 3 overall rings up front so they animate in (no full-ring flash)
+    ['1', '2', '3'].forEach(function(p) {
+      var ring = document.getElementById('oring-' + p);
+      if (!ring) return;
+      var circ = 2 * Math.PI * (+ring.getAttribute('r'));
+      ring.style.strokeDasharray  = circ.toFixed(2) + ' ' + circ.toFixed(2);
+      ring.style.strokeDashoffset = circ.toFixed(2);
+    });
+
+    // Overall widget = per-phase completion (colored bars + donut rings),
+    // with the centre number weighted by phase length. Each is driven live.
+    function updateOverall() {
+      var boxes = document.querySelectorAll('[data-phase]');
+      var acc = 0, wSum = 0;
+      boxes.forEach(function(box) {
+        var p = box.getAttribute('data-phase');
+        var w = PHASE_WEIGHTS[p] || 1;
+        var items = box.querySelectorAll('.phase-check');
+        var done = 0;
+        items.forEach(function(cb) { if (cb.checked) done++; });
+        var frac = items.length ? done / items.length : 0;
+        acc += frac * w; wSum += w;
+
+        var pctTxt = Math.round(frac * 100) + '%';
+        var bar = document.getElementById('obar-' + p);
+        var pctEl = document.getElementById('opct-' + p);
+        if (bar) bar.style.width = pctTxt;
+        if (pctEl) pctEl.textContent = pctTxt;
+
+        var ring = document.getElementById('oring-' + p);
+        if (ring) {
+          var circ = 2 * Math.PI * (+ring.getAttribute('r'));
+          ring.style.strokeDashoffset = (circ * (1 - frac)).toFixed(2);
+        }
+      });
+      var el = document.getElementById('pieOverallPct');
+      if (el) el.textContent = (wSum ? Math.round(acc / wSum * 100) : 0) + '%';
+    }
+
+    var phaseBoxes = Array.prototype.slice.call(document.querySelectorAll('[data-phase]'));
+
+    // Animate phase bars in on load
+    phaseBoxes.forEach(function(box) {
+      var fill = box.querySelector('.phase-progress-fill');
+      if (fill) fill.style.width = '0%';
+    });
+    setTimeout(function() { phaseBoxes.forEach(refreshPhase); updateOverall(); }, 650);
+
+    // Handle edits
+    checks.forEach(function(cb) {
+      cb.addEventListener('change', function() {
+        if (!EDIT) return;
+        var store = loadStore();
+        store[cb.id] = cb.checked;
+        saveStore(store);
+        var box = cb.closest('[data-phase]');
+        if (box) refreshPhase(box);
+        updateOverall();
+      });
+    });
+
+    // Copy-progress helper (edit mode) — hand the state to Claude to commit
+    var copyBtn = document.getElementById('copyProgressBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function() {
+        var lines = ['Fishless Desert milestone progress — paste to Claude to publish:', ''];
+        phaseBoxes.forEach(function(box) {
+          var label = box.querySelector('.group-label');
+          var items = box.querySelectorAll('.phase-check');
+          var done = 0; items.forEach(function(cb){ if (cb.checked) done++; });
+          lines.push((label ? label.textContent.trim() : 'Phase') + '  (' + done + '/' + items.length + ')');
+          items.forEach(function(cb) {
+            var txt = cb.parentNode.querySelector('.check-label');
+            lines.push('  [' + (cb.checked ? 'x' : ' ') + '] ' + cb.id + ' — ' + (txt ? txt.textContent.trim() : ''));
+          });
+          lines.push('');
+        });
+        var out = lines.join('\n');
+        function done() {
+          var orig = copyBtn.textContent;
+          copyBtn.textContent = 'Copied ✓';
+          setTimeout(function(){ copyBtn.textContent = orig; }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(out).then(done, function(){ window.prompt('Copy progress:', out); });
+        } else {
+          window.prompt('Copy progress:', out);
+        }
+      });
+    }
+  })();
+
+</script>
+
+
+
+</body></html>
