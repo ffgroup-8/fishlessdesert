@@ -1068,7 +1068,7 @@
     <p class="sitemap-title">Fishless Desert</p>
     <h1 class="sitemap-subtitle">Sitemap &amp; Project Status Tracker</h1>
     <p class="sitemap-date">Last updated: August 14, 2026</p>
-    <p class="sitemap-update">↳ Site structure revised to 6 pages: Properties landing and FAQs added, and the project modal replaced by full Property / Case Study pages. Phase 2 milestones updated to match.</p>
+    <p class="sitemap-update">↳ Source copy from the live Webflow site folded into every Content Created box, tagged MIGRATE, REWRITE, or NEW. Site structure is the revised 6 pages.</p>
   </div>
 
 
@@ -1419,7 +1419,12 @@
   <div class="section-label">📋 Page Content Strategy &amp; SEO/AEO Structure</div>
 
   <div class="note" style="margin-bottom: 24px;">
-    Six pages, each with a distinct job. Titles stay under 60 characters, meta descriptions under 155. Every page leads with a plain one-sentence definition an AI answer engine can lift directly, and the schema below is implemented as JSON-LD through Sanity. Giving each development its own case study page is the single biggest SEO gain in this restructure: project names like Boxyard Tulsa and Santa Fe Square get a dedicated indexable URL instead of a modal state.
+    Source copy below was captured from the live Webflow site on August 14, 2026. Each module is tagged so the build knows what it is dealing with:&nbsp;
+    <strong>MIGRATE</strong> means usable copy exists and carries over as written.&nbsp;
+    <strong>REWRITE</strong> means copy exists but is too long, wrong, or stale.&nbsp;
+    <strong>NEW</strong> means nothing exists and it has to be written.
+    <br><br>
+    Two items block Phase 2 content: the five developments with no copy at all, and the FAQs page, which is placeholder Lorem ipsum on the live site today. Both need client input before those pages can be built. Titles stay under 60 characters and meta descriptions under 155. Every live meta description except About and Contact is currently over that limit and is marked for rewrite.
   </div>
 
   <div class="content-section">
@@ -1434,45 +1439,52 @@
       <p><strong>Primary Keywords:</strong> urban infill development Tulsa, Tulsa real estate developer, urban revitalization Oklahoma, mixed-use development Tulsa</p>
       <p><strong>Schema:</strong> Organization, WebSite, BreadcrumbList</p>
       <p><strong>AEO Targets:</strong> "Who develops urban infill projects in Tulsa?" · "What does Fishless Desert do?"</p>
+      <p><strong>Current live title:</strong> "Fishless Desert - Real Estate Urban Development - Tulsa, OK" (59 chars, fine). <strong>Current meta:</strong> 283 chars, must be cut.</p>
     </div>
 
     <div class="content-created-box">
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Hero</strong></p>
+      <p><strong>📌 Module 1 — Hero</strong> <em>(MIGRATE)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Rebuilding the places long since forgotten.</li>
-        <li><strong>Body:</strong> Fishless Desert is a multidisciplinary real estate company focused on urban infill and revitalization across Oklahoma and the south-central United States.</li>
-        <li><strong>CTA:</strong> "See our properties" goes to /properties. Secondary "Let's talk" goes to /contact.</li>
+        <li><strong>Epigraph:</strong> "They were as old as erosions in a fishless desert" Ernest Hemingway, The Old Man and the Sea. <strong>Note:</strong> the live site misspells this as "Earnest". Fix on migration.</li>
+        <li><strong>Headline:</strong> "Rebuilding the places long since forgotten." <strong>Decision needed:</strong> the live site runs two versions, "Developing the places long since forgotten" as the Home H1 and "Rebuilding" in the mission block. Client to pick one.</li>
+        <li><strong>CTA:</strong> "See properties" goes to /properties. Secondary "Let's talk" goes to /contact.</li>
       </ul>
 
-      <p><strong>📌 Module 2 — What We Do</strong></p>
+      <p><strong>📌 Module 2 — What We Do</strong> <em>(MIGRATE)</em></p>
       <ul>
-        <li><strong>Headline:</strong> From first site walk to ribbon cutting.</li>
-        <li><strong>Body:</strong> Four service pillars: planning and due diligence, tax credit capital stack formation, public incentive procurement, and construction management.</li>
-        <li><strong>CTA:</strong> None. This module feeds the AI answer layer.</li>
+        <li><strong>Body, verbatim:</strong> "Fishless Desert Development is a multidisciplinary real estate company. We specialize in urban infill and revitalization efforts in Oklahoma and the south-central United States."</li>
+        <li><strong>Service list, verbatim:</strong> Planning · Due diligence · Tax credit capital stack formation · Public incentive procurement · Construction Management/Owner's Rep</li>
+        <li><strong>CTA:</strong> None. This block is the AI answer layer.</li>
       </ul>
 
-      <p><strong>📌 Module 3 — Featured Work</strong></p>
+      <p><strong>📌 Module 3 — Mission</strong> <em>(MIGRATE)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Transforming cities through placemaking.</li>
-        <li><strong>Body:</strong> Four featured developments pulled from Sanity: Santa Fe Square, Maple Ridge, The Boxyard, and Cheyenne Megaspace. Cards link to their case study pages.</li>
-        <li><strong>CTA:</strong> "View all properties" goes to /properties.</li>
-      </ul>
-
-      <p><strong>📌 Module 4 — Who We Are</strong></p>
-      <ul>
-        <li><strong>Headline:</strong> Two decades of betting on downtown Tulsa.</li>
-        <li><strong>Body:</strong> Credibility block: 30+ historic rehabilitation projects and roughly $430 million in urban infill work across multifamily, office, and retail.</li>
+        <li><strong>Body, verbatim:</strong> "Our mission is to make American cities better one development at a time by sensible design and focusing on neighborhoods in need of redevelopment."</li>
         <li><strong>CTA:</strong> "Meet our team" goes to /about.</li>
       </ul>
 
-      <p><strong>📌 Module 5 — Ready to Start</strong></p>
+      <p><strong>📌 Module 4 — Featured Work</strong> <em>(MIGRATE, order preserved)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Have a building everyone else has written off?</li>
-        <li><strong>Body:</strong> Short invitation aimed at property owners, brokers, and municipal partners.</li>
-        <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
+        <li><strong>Headline:</strong> Selected Works</li>
+        <li><strong>Cards, live order:</strong> Santa Fe Square, Maple Ridge Historic Renovation, Cheyenne Megaspace, The Boxyard. Pulled from Sanity, each links to its case study.</li>
+        <li><strong>CTA:</strong> "All properties" goes to /properties.</li>
+      </ul>
+
+      <p><strong>📌 Module 5 — Who We Are</strong> <em>(MIGRATE)</em></p>
+      <ul>
+        <li><strong>Body, verbatim:</strong> "From spearheading a master planned, mixed-use development encompassing two full city blocks, to leading the complex financing and historical renovation of one of Tulsa's most significant Art Deco high rises, Fishless Desert Development have developed or redeveloped some of the region's foremost buildings and structures."</li>
+        <li><strong>Pull quote, verbatim:</strong> "We want to create something new and vibrant for Tulsa. It deserves nothing less." Elliot Nelson</li>
+        <li><strong>CTA:</strong> "Meet our team" goes to /about.</li>
+      </ul>
+
+      <p><strong>📌 Module 6 — Ready to Start</strong> <em>(MIGRATE)</em></p>
+      <ul>
+        <li><strong>Headline, verbatim:</strong> "Ready to Start?"</li>
+        <li><strong>Body, verbatim:</strong> "Reach out to Fishless Desert."</li>
+        <li><strong>CTA:</strong> "Let's talk" goes to /contact. Footer line stays "Transforming cities through placemaking."</li>
       </ul>
     </div>
   </div>
@@ -1489,37 +1501,44 @@
       <p><strong>Primary Keywords:</strong> Elliot Nelson developer, Fishless Desert team, Tulsa development company, historic rehabilitation Oklahoma</p>
       <p><strong>Schema:</strong> AboutPage, Organization, Person (Elliot Nelson, Matt Newman), HowTo (the four-step approach)</p>
       <p><strong>AEO Targets:</strong> "Who founded Fishless Desert?" · "Who is Elliot Nelson?" · "Why is it called Fishless Desert?"</p>
+      <p><strong>Current live title:</strong> "About - Fishless Desert - Tulsa Urban Development" (49). <strong>Current meta:</strong> 127 chars, the only one already in range.</p>
     </div>
 
     <div class="content-created-box">
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Origin</strong></p>
+      <p><strong>📌 Module 1 — Who we are</strong> <em>(MIGRATE)</em></p>
       <ul>
-        <li><strong>Headline:</strong> The name comes from a Hemingway line about erosion and abandonment.</li>
-        <li><strong>Body:</strong> Opens with the plain definition sentence, then the two-decade story of revitalizing a deteriorated stretch of downtown Tulsa.</li>
+        <li><strong>Body, verbatim:</strong> "Fishless Desert Development is a multidisciplinary real estate company. We specialize in urban infill and revitalization efforts in Oklahoma and the south-central United States. Our mission is to make American cities better one development at a time by sensible design and focusing on neighborhoods in need of redevelopment."</li>
         <li><strong>CTA:</strong> None.</li>
       </ul>
 
-      <p><strong>📌 Module 2 — Team</strong></p>
+      <p><strong>📌 Module 2 — Origin</strong> <em>(MIGRATE with one update)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Who we are.</li>
-        <li><strong>Body:</strong> Elliot Nelson, Founder and CEO, who also leads McNellie's Group across 24 restaurants serving more than 10 million customers in 19 years. Matt Newman, Vice President of Development, with 18+ years and over $200 million in projects, specializing in mixed-use work involving zoning changes and complex tax credit financing. Built as a repeatable Sanity team module so new hires can be added.</li>
+        <li><strong>Body, verbatim:</strong> "Fishless Desert was born out of the efforts of J. Elliot Nelson who spent 20 years revitalizing a dilapidated corner of downtown Tulsa. In his career, he has completed over 30 historic rehabilitation projects and over $430mm of urban infill work consisting of multifamily, office, and retail developments. In 2022, Matt Newman joined the company adding his 17+ years' experience in real estate development and construction management."</li>
+        <li><strong>Fix on migration:</strong> this says Matt has "17+ years" while his own bio below says "over 18 years". Confirm one figure, and prefer a joining year over a running count so it does not go stale.</li>
+        <li><strong>CTA:</strong> None.</li>
+      </ul>
+
+      <p><strong>📌 Module 3 — The Team</strong> <em>(MIGRATE, build as a repeatable Sanity module)</em></p>
+      <ul>
+        <li><strong>Elliot Nelson, CEO, verbatim:</strong> "Elliot is the founder and CEO of McNellie's Group, a hospitality focused company with a collection of 24 restaurants that pioneered downtown revitalization in Tulsa, Oklahoma City, and Little Rock. His restaurant concepts have served over 10,000,000 people in the last 19 years. As principal of Fishless Desert Development, Elliot has spearheaded the Santa Fe Square development in downtown Tulsa which encompasses over 183,000 sf of office &amp; commercial space, 184 unit apartments, 93 room hotel, and 700 space parking garage."</li>
+        <li><strong>Matt Newman, VP of Development, verbatim:</strong> "Matt is head of real estate development and investments at Fishless Desert Development. With over 18 years in the real estate and construction industries, he has been the lead on more than $200,000,000 in land development, historic renovation, and infill construction in the Tulsa market. Matt specializes in mixed-use commercial development often requiring zoning use changes and complex capital stacks including local, state, and federal tax credits and incentives."</li>
         <li><strong>CTA:</strong> None. Each profile carries Person schema.</li>
       </ul>
 
-      <p><strong>📌 Module 3 — How we work</strong></p>
+      <p><strong>📌 Module 4 — How we work</strong> <em>(NEW, built from the existing service list)</em></p>
       <ul>
         <li><strong>Headline:</strong> Our approach, in four steps.</li>
-        <li><strong>Body:</strong> Numbered process covering planning and due diligence, capital stack formation, incentive procurement, and construction management. Numbered so it qualifies for HowTo schema.</li>
+        <li><strong>Body:</strong> Expand the five live service bullets into a numbered process: planning and due diligence, tax credit capital stack formation, public incentive procurement, then construction management and owner's rep. Numbered so it qualifies for HowTo schema.</li>
         <li><strong>CTA:</strong> "See the work" goes to /properties.</li>
       </ul>
 
-      <p><strong>📌 Module 4 — Track record</strong></p>
+      <p><strong>📌 Module 5 — Track record</strong> <em>(NEW, numbers already on site)</em></p>
       <ul>
         <li><strong>Headline:</strong> The numbers.</li>
-        <li><strong>Body:</strong> 30+ historic rehabilitation projects, roughly $430 million in urban infill, and a portfolio spanning office, restaurant, retail, hospitality, mixed-use, and residential.</li>
+        <li><strong>Body:</strong> 30+ historic rehabilitation projects, over $430mm in urban infill, $200,000,000+ led by Matt, and a portfolio spanning office, restaurant, retail, hospitality, mixed-use, and residential.</li>
         <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
       </ul>
     </div>
@@ -1537,37 +1556,38 @@
       <p><strong>Primary Keywords:</strong> Tulsa developments, Fishless Desert properties, Tulsa mixed-use projects, Oklahoma infill developments</p>
       <p><strong>Schema:</strong> CollectionPage, ItemList, BreadcrumbList</p>
       <p><strong>AEO Targets:</strong> "What projects has Fishless Desert developed?" · "What developments are in downtown Tulsa?"</p>
+      <p><strong>Redirect:</strong> /properties/our-work points here. Current live title is 60 chars, at the limit.</p>
     </div>
 
     <div class="content-created-box">
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Intro</strong></p>
+      <p><strong>📌 Module 1 — Intro</strong> <em>(NEW)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Every project started as somewhere people had stopped going.</li>
-        <li><strong>Body:</strong> One short paragraph framing the portfolio, followed by a plain summary line naming the asset types: office, restaurant, retail, hospitality, mixed-use, and residential.</li>
+        <li><strong>Headline:</strong> Our properties.</li>
+        <li><strong>Body:</strong> The live Our Work page has no intro copy at all, just two lists. Write one short framing paragraph plus a plain summary line naming the asset types: office, restaurant, retail, hospitality, mixed-use, and residential.</li>
         <li><strong>CTA:</strong> None.</li>
       </ul>
 
-      <p><strong>📌 Module 2 — Featured developments</strong></p>
+      <p><strong>📌 Module 2 — Featured developments</strong> <em>(MIGRATE, order preserved)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Featured developments.</li>
-        <li><strong>Body:</strong> Large-format cards for Santa Fe Square, Maple Ridge, The Boxyard, and Cheyenne Megaspace, each with location, type, and a one-line hook.</li>
+        <li><strong>Headline, verbatim:</strong> "Featured developments"</li>
+        <li><strong>Cards, live order:</strong> Santa Fe Square, Maple Ridge Historic Renovation, The Boxyard, Cheyenne Megaspace. Each with location, project type, and a one-line hook drawn from its overview.</li>
         <li><strong>CTA:</strong> Each card links to its case study page.</li>
       </ul>
 
-      <p><strong>📌 Module 3 — Full portfolio</strong></p>
+      <p><strong>📌 Module 3 — Full portfolio</strong> <em>(NEW content required)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Everything we have developed.</li>
-        <li><strong>Body:</strong> Grid covering The Coliseum, McNellie's Pub Courtyard, Midland, SoBo Infill Development, and the 11th Street Route 66 Infill Development, with filters for project type and status. Sanity-driven so new work appears automatically.</li>
-        <li><strong>CTA:</strong> Each card links to its case study page.</li>
+        <li><strong>Headline, live version:</strong> "Other Properties We've Developed"</li>
+        <li><strong>Body:</strong> The live site lists these five as plain bullets with no page and no copy: The Coliseum, McNellie's Pub Courtyard, Midland, SoBo Infill Development, and the 11th Street Route 66 Infill Development. <strong>Blocking dependency:</strong> each needs an overview, project facts, and imagery from the client before its case study page can be built.</li>
+        <li><strong>CTA:</strong> Each card links to its case study page. Add filters for project type and status.</li>
       </ul>
 
-      <p><strong>📌 Module 4 — Closing CTA</strong></p>
+      <p><strong>📌 Module 4 — Closing CTA</strong> <em>(MIGRATE)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Bring us the hard one.</li>
-        <li><strong>Body:</strong> Short invitation for owners and partners with a property in mind.</li>
+        <li><strong>Headline, verbatim:</strong> "Ready to Start?"</li>
+        <li><strong>Body, verbatim:</strong> "Reach out to Fishless Desert."</li>
         <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
       </ul>
     </div>
@@ -1583,39 +1603,54 @@
       <p><strong>SEO Title:</strong> [Property Name] | Fishless Desert (example: Boxyard Tulsa | Fishless Desert)</p>
       <p><strong>Meta Description:</strong> Pattern: [Property Name] in [Location] is a [project type] development by Fishless Desert. [One line on scope and outcome.]</p>
       <p><strong>Primary Keywords:</strong> [property name], [property name] developer, [neighborhood] development Tulsa</p>
-      <p><strong>Schema:</strong> Article or CreativeWork, Place, BreadcrumbList</p>
+      <p><strong>Schema:</strong> Article or CreativeWork, Place, BreadcrumbList. None of the live property pages carry any structured data today.</p>
       <p><strong>AEO Targets:</strong> "What is Boxyard Tulsa?" · "Who developed Santa Fe Square?" · "How big is Santa Fe Square?"</p>
+      <p><strong>Slugs to preserve:</strong> /properties/santa-fe-square, /properties/boxyard-tulsa, /properties/cheyenne-megaspace-tulsa, /properties/maple-ridge-tulsa</p>
     </div>
 
     <div class="content-created-box">
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Hero and definition</strong></p>
+      <p><strong>Template pattern.</strong> The live pages all follow the same shape: name, location, "project overview" paragraph, Builders credit, gallery, "about" detail paragraph, an Elliot Nelson pull quote, then "more developments". Keep that structure and add a plain definition sentence under the hero for AI answer engines. Source copy for each property follows.</p>
+
+      <p><strong>📌 Santa Fe Square</strong> · /properties/santa-fe-square <em>(MIGRATE, dates need refresh)</em></p>
       <ul>
-        <li><strong>Headline:</strong> [Property Name]</li>
-        <li><strong>Body:</strong> Location, project type, and status as a metadata row, with one plain definition sentence directly beneath it: "[Property Name] is a [type] development in [location] by Fishless Desert." That sentence is what AI engines will lift.</li>
-        <li><strong>CTA:</strong> None.</li>
+        <li><strong>Location:</strong> Tulsa, OK. <strong>Builders:</strong> Fishless Desert, American Residential Group, Industrial Developers of OK.</li>
+        <li><strong>Overview, verbatim:</strong> "Santa Fe Square is the culmination of a decade-long transformation of Tulsa's Blue Dome District. This mixed-use development is reshaping an under-utilized parking lot into a thriving, pedestrian-oriented public square in the heart of downtown Tulsa."</li>
+        <li><strong>About, verbatim:</strong> "The development includes a 12-story office building with structured parking for 700 spaces, an 184-unit apartment with 20,000 square feet of retail, and a 93-room hotel."</li>
+        <li><strong>Quote, verbatim:</strong> "Tulsa's largest ever mixed use development; An urban infill of two city blocks encompassing Class A office, multifamily, retail, and public plaza space" Elliot Nelson</li>
+        <li><strong>Fix:</strong> the live H1 is "Santa Fe Square Completion Coming Soon" and the body says the final phase completes in 2024. Get current status from the client and use a completion year rather than "coming soon".</li>
       </ul>
 
-      <p><strong>📌 Module 2 — The story</strong></p>
+      <p><strong>📌 The Boxyard</strong> · /properties/boxyard-tulsa <em>(MIGRATE)</em></p>
       <ul>
-        <li><strong>Headline:</strong> What it took.</li>
-        <li><strong>Body:</strong> The condition of the site before, the financing and incentive structure used, and what the finished project delivers to the neighborhood.</li>
-        <li><strong>CTA:</strong> None.</li>
+        <li><strong>Location:</strong> Tulsa, OK. <strong>Builders:</strong> Fishless Desert, Ross Development Group. <strong>Completed:</strong> 2016.</li>
+        <li><strong>Overview, verbatim:</strong> "Inspired by an iconic London development, the Boxyard is made up of 39 repurposed shipping containers on less than 15,000 square feet of land. This one-of-a-kind development in the area, created unique spaces for micro-retail, restaurant, and commercial spaces for 20 different tenants, with many of them being first time ventures and start-ups."</li>
+        <li><strong>About, verbatim:</strong> "Boxyard was completed between a partnership of Nelson + Stowe Development and Ross Group Development."</li>
+        <li><strong>Feature headline, verbatim:</strong> "Supporting new-coming entrepreneurs. A hub for entrepreneurship and small businesses, many of the stores are first time ventures or second locales."</li>
+        <li><strong>Quote, verbatim:</strong> "Urban infill retail development utilizing reclaimed shipping containers and creating a new attraction in downtown Tulsa" Elliot Nelson</li>
       </ul>
 
-      <p><strong>📌 Module 3 — By the numbers</strong></p>
+      <p><strong>📌 Cheyenne Megaspace</strong> · /properties/cheyenne-megaspace-tulsa <em>(MIGRATE, dates and figures need refresh)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Project facts.</li>
-        <li><strong>Body:</strong> Structured Sanity fields: square footage, unit or key count, parking, completion year, partners. Santa Fe Square carries 183,000+ sq ft of commercial space, 184 apartments, a 93-room hotel, and parking for 700 vehicles.</li>
-        <li><strong>CTA:</strong> None.</li>
+        <li><strong>Location:</strong> Tulsa, OK. <strong>Builders:</strong> Fishless Desert, 36°N, John "Chip" Gaberino.</li>
+        <li><strong>Overview, verbatim:</strong> "The Cheyenne Megaspace is the historical redevelopment of the former Oklahoma Tire and Supply Company's (OTASCO) main storage warehouse located on the western end of the Arts District in Downtown Tulsa."</li>
+        <li><strong>About, verbatim:</strong> "Once complete, the ~107,000 sf will be the home to 36°N and be the state's largest entrepreneurial support center and mixed-use coworking space in the state of Oklahoma."</li>
+        <li><strong>Quote, verbatim:</strong> "A Historic tax credit development repurposing a 110,000 sq ft warehouse in to a new tech hub and incubator" Elliot Nelson</li>
+        <li><strong>Fix:</strong> the page says ~107,000 sf in the body and 110,000 sq ft in the quote. It also says "Expected completion Winter 2024". Confirm the real square footage and current status.</li>
       </ul>
 
-      <p><strong>📌 Module 4 — Gallery and next</strong></p>
+      <p><strong>📌 Maple Ridge Historic Renovation</strong> · /properties/maple-ridge-tulsa <em>(NEW, page is nearly empty)</em></p>
       <ul>
-        <li><strong>Headline:</strong> None. Imagery carries this block.</li>
-        <li><strong>Body:</strong> Before and after imagery where available, all with descriptive alt text, followed by two or three related developments.</li>
+        <li><strong>Location:</strong> Tulsa, OK. <strong>Builders:</strong> Fishless Desert.</li>
+        <li><strong>All existing copy:</strong> the headline "A historical renovation" and one quote, verbatim: "This historic renovation of a 1930s neighborhood retail building is a personal favorite of mine" Elliot Nelson. There is no project overview paragraph.</li>
+        <li><strong>Fix:</strong> the live meta description for this page actually describes a different building, The Midland on the Midland Valley Railway. Do not migrate it. This page needs a full overview and project facts written from scratch.</li>
+      </ul>
+
+      <p><strong>📌 The Coliseum, McNellie's Pub Courtyard, Midland, SoBo Infill, 11th Street Route 66</strong> <em>(NEW, nothing exists)</em></p>
+      <ul>
+        <li><strong>Body:</strong> These five appear only as bullets on the live Our Work page. Every field on the case study template needs sourcing from the client: overview, location, project type, status, square footage, completion year, partners, and imagery.</li>
         <li><strong>CTA:</strong> "Back to all properties" goes to /properties.</li>
       </ul>
     </div>
@@ -1633,37 +1668,37 @@
       <p><strong>Primary Keywords:</strong> urban development FAQ, historic tax credit development, Tulsa development partnership, infill development process</p>
       <p><strong>Schema:</strong> FAQPage, BreadcrumbList</p>
       <p><strong>AEO Targets:</strong> "How do historic tax credits work in development?" · "Does Fishless Desert partner on outside projects?" · "Where does Fishless Desert build?"</p>
+      <p><strong>Current live title:</strong> "FAQ" (3 chars) with no meta description at all. Biggest single metadata gap on the site.</p>
     </div>
 
     <div class="content-created-box">
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Intro</strong></p>
+      <p><strong>⚠️ Nothing to migrate.</strong> The live /faq page is placeholder text. It contains one question, "Why do I need Fishless Desert?", duplicated twice, each answered with Lorem ipsum ("Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean."). The only real copy on the page is the heading "got a question? we've got answers." Every answer below is net-new writing and needs client input.</p>
+
+      <p><strong>📌 Module 1 — Intro</strong> <em>(NEW)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Questions we get asked most.</li>
+        <li><strong>Headline, migrate from live:</strong> "Got a question? We've got answers."</li>
         <li><strong>Body:</strong> One short framing paragraph so the page is not a bare accordion.</li>
         <li><strong>CTA:</strong> None.</li>
       </ul>
 
-      <p><strong>📌 Module 2 — What we take on</strong></p>
+      <p><strong>📌 Module 2 — Projects and partnerships</strong> <em>(NEW, needs client input)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Projects and partnerships.</li>
-        <li><strong>Body:</strong> Questions covering the types and sizes of project Fishless Desert pursues, how a property owner starts a conversation, and how partnerships are typically structured. Each answer opens with a direct one-sentence response before any detail.</li>
-        <li><strong>CTA:</strong> None.</li>
+        <li><strong>Questions to answer:</strong> What types and sizes of project does Fishless Desert take on? How does a property owner start a conversation? How are partnerships typically structured? Does Fishless Desert develop for third parties or only its own portfolio?</li>
+        <li><strong>Format:</strong> each answer opens with a direct one-sentence response before any detail, so answer engines can lift it.</li>
       </ul>
 
-      <p><strong>📌 Module 3 — Financing and incentives</strong></p>
+      <p><strong>📌 Module 3 — Financing and incentives</strong> <em>(NEW, needs client input)</em></p>
       <ul>
-        <li><strong>Headline:</strong> How the money works.</li>
-        <li><strong>Body:</strong> Plain-language answers on historic tax credits, capital stack formation, and public incentive procurement. This is the block most likely to be surfaced by AI search.</li>
-        <li><strong>CTA:</strong> None.</li>
+        <li><strong>Questions to answer:</strong> How do historic tax credits work on a redevelopment? What is capital stack formation? What public incentives are typically available in Tulsa and Oklahoma? How long does a typical project take from acquisition to opening?</li>
+        <li><strong>Why this block matters:</strong> these are the highest-value question-shaped searches in the sector and the most likely to be surfaced by AI search.</li>
       </ul>
 
-      <p><strong>📌 Module 4 — Where we work</strong></p>
+      <p><strong>📌 Module 4 — Where we work</strong> <em>(NEW)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Geography.</li>
-        <li><strong>Body:</strong> Oklahoma and the south-central United States, with Tulsa as the base. Closes the page with a route into contact.</li>
+        <li><strong>Body:</strong> Oklahoma and the south-central United States, with Tulsa as the base and prior work in Oklahoma City and Little Rock through McNellie's Group.</li>
         <li><strong>CTA:</strong> "Still have a question?" goes to /contact.</li>
       </ul>
     </div>
@@ -1681,27 +1716,36 @@
       <p><strong>Primary Keywords:</strong> contact Fishless Desert, Tulsa developer contact, Tulsa development partnership</p>
       <p><strong>Schema:</strong> ContactPage, LocalBusiness (Tulsa office)</p>
       <p><strong>AEO Targets:</strong> "How do I contact Fishless Desert?" · "Where is Fishless Desert located?"</p>
+      <p><strong>Current live title:</strong> "Contact - Fishless Desert - Tulsa Urban Development" (51). <strong>Current meta:</strong> 153 chars, in range.</p>
     </div>
 
     <div class="content-created-box">
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Enquiry form</strong></p>
+      <p><strong>📌 Module 1 — Intro</strong> <em>(REWRITE, source is one long block)</em></p>
       <ul>
+        <li><strong>Live copy, verbatim:</strong> "Fishless Desert Development, a Tulsa owned real estate company, acquires and develops real estate in Tulsa, Oklahoma City, and the surrounding areas with a focus on creating superior community spaces and destinations with a guiding principle of making our City a better place to live. Our projects include office, restaurant, retail, hospitality, mixed-use, and residential."</li>
+        <li><strong>Direction:</strong> this is one 60-word sentence doing the work of two. Split it, and lead with the invitation rather than the company description.</li>
         <li><strong>Headline:</strong> Let's talk.</li>
-        <li><strong>Body:</strong> Name, email, enquiry type (property, partnership, press, other), and message. Enquiry type routes the notification to the right person.</li>
-        <li><strong>CTA:</strong> "Send" with an inline confirmation state, no redirect to a thank-you page.</li>
       </ul>
 
-      <p><strong>📌 Module 2 — Office</strong></p>
+      <p><strong>📌 Module 2 — Enquiry form</strong> <em>(MIGRATE plus one addition)</em></p>
       <ul>
-        <li><strong>Headline:</strong> Find us.</li>
-        <li><strong>Body:</strong> 608 E. 3rd St, Tulsa, Oklahoma, with a map embed and LocalBusiness markup.</li>
-        <li><strong>CTA:</strong> "Get directions" opens the map.</li>
+        <li><strong>Live fields, verbatim:</strong> First Name, Last Name, Email address, Company (if any), Message.</li>
+        <li><strong>Add:</strong> an enquiry type selector (property, partnership, press, other) so notifications route to the right person.</li>
+        <li><strong>CTA:</strong> "Send" with an inline confirmation state. Live success copy: "Thank you! Your submission has been received!"</li>
       </ul>
 
-      <p><strong>📌 Module 3 — Pointer to FAQs</strong></p>
+      <p><strong>📌 Module 3 — Office</strong> <em>(MIGRATE)</em></p>
+      <ul>
+        <li><strong>Address, verbatim:</strong> 608 E. 3rd St., Tulsa, OK 74120</li>
+        <li><strong>Phone:</strong> 918.582.2035 · <strong>Email:</strong> info@fishlessdesert.com</li>
+        <li><strong>Social:</strong> Instagram, LinkedIn</li>
+        <li><strong>CTA:</strong> "Get directions" opens the map. Add LocalBusiness markup, which the live page lacks.</li>
+      </ul>
+
+      <p><strong>📌 Module 4 — Pointer to FAQs</strong> <em>(NEW)</em></p>
       <ul>
         <li><strong>Headline:</strong> Looking for a quick answer?</li>
         <li><strong>Body:</strong> Short block steering common questions to the FAQs page so the form stays high-intent.</li>
