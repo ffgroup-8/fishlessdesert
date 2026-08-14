@@ -1068,7 +1068,7 @@
     <p class="sitemap-title">Fishless Desert</p>
     <h1 class="sitemap-subtitle">Sitemap &amp; Project Status Tracker</h1>
     <p class="sitemap-date">Last updated: August 14, 2026</p>
-    <p class="sitemap-update">↳ Tracker created from the accepted proposal. Scope, phases, sitemap, and content strategy loaded. Kickoff August 20, 2026.</p>
+    <p class="sitemap-update">↳ Site structure revised to 6 pages: Properties landing and FAQs added, and the project modal replaced by full Property / Case Study pages. Phase 2 milestones updated to match.</p>
   </div>
 
 
@@ -1159,6 +1159,8 @@
     <br><br>
     The Fishless Desert website is being completely redesigned and migrated from Webflow to a modern Sanity-powered platform. The work covers a focused Figma design sprint across the primary site experience, a reusable design and component system, migration of existing content, responsive development, testing, optimization, and launch. Every page is structured so it reads clearly for both visitors and AI-powered search.
     <strong>Current status: Not started. Kickoff scheduled for August 20, 2026.</strong>
+    <br><br>
+    <strong>Scope note:</strong> the site structure was revised after the proposal was accepted. The original plan combined Home and Projects on one page with project detail in a modal. The agreed structure is now 6 distinct pages, adding a Properties landing page and an FAQs page, and replacing the modal with full Property / Case Study pages. Phase 2 milestones reflect the revised page set.
   </div>
 
   <div class="columns">
@@ -1199,14 +1201,15 @@
             <span class="status-pill not-started phase-status"><span class="pill-icon">○</span> Not Started</span>
           </div>
           <ul class="check-list">
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-1"><span class="check-box"></span><span class="check-label">Design and develop the Home / Projects page</span></label></li>
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-2"><span class="check-box"></span><span class="check-label">Build the project detail modal experience</span></label></li>
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-3"><span class="check-box"></span><span class="check-label">Design and develop the About page</span></label></li>
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-4"><span class="check-box"></span><span class="check-label">Design and develop the Contact page</span></label></li>
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-5"><span class="check-box"></span><span class="check-label">Build the navigation system, header, and footer</span></label></li>
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-6"><span class="check-box"></span><span class="check-label">Build reusable content sections and modules</span></label></li>
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-7"><span class="check-box"></span><span class="check-label">Responsive desktop, tablet, and mobile builds</span></label></li>
-            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-8"><span class="check-box"></span><span class="check-label">Integrate all site content with Sanity CMS</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-1"><span class="check-box"></span><span class="check-label">Design and develop the Home page</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-2"><span class="check-box"></span><span class="check-label">Design and develop the Properties landing page</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-3"><span class="check-box"></span><span class="check-label">Design and develop the Property / Case Study template</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-4"><span class="check-box"></span><span class="check-label">Design and develop the About page with team profiles</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-5"><span class="check-box"></span><span class="check-label">Design and develop the FAQs page</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-6"><span class="check-box"></span><span class="check-label">Design and develop the Contact page</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-7"><span class="check-box"></span><span class="check-label">Build the navigation system, header, and footer</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-8"><span class="check-box"></span><span class="check-label">Build reusable content sections and responsive breakpoints</span></label></li>
+            <li><label class="check-item"><input type="checkbox" class="phase-check" id="p2-9"><span class="check-box"></span><span class="check-label">Integrate all site content with Sanity CMS</span></label></li>
           </ul>
           <div class="phase-progress">
             <div class="phase-progress-head"><span>Phase progress</span><span class="phase-progress-pct">0%</span></div>
@@ -1255,14 +1258,14 @@
   <div class="section-label">🏠 Fishless Desert — Website Sitemap</div>
 
   <div class="note" style="margin-bottom: 24px;">
-    <strong>New structure:</strong> the site consolidates into a single Home / Projects experience with project detail delivered in a modal, plus About and Contact. Every page and project is driven by Sanity, so new developments are added by the client without a rebuild.&nbsp;
-    <strong>Legacy Webflow URLs</strong> (/about-fishless-desert, /properties/our-work, /properties/[slug], /faq) get 301 redirects at cutover so existing rankings and inbound links carry over.
+    <strong>Structure:</strong> 6 pages. Home sells the positioning and points at the work, Properties holds the full portfolio, and each development gets its own Property / Case Study page rather than a modal, so individual projects can rank and be linked directly. Properties and case studies are driven by Sanity, so the client adds a new development without a rebuild.&nbsp;
+    <strong>Legacy Webflow URLs</strong> map almost one to one, which keeps existing rankings intact: /about-fishless-desert redirects to /about, /properties/our-work redirects to /properties, and /properties/[slug] and /faq keep their paths.
   </div>
 
   <div class="tree-root">
     <div class="node home">
-      <div class="node-title">HOME / PROJECTS</div>
-      <div class="node-desc">Flagship single-page experience: positioning ("rebuilding the places long since forgotten"), what we do, the selected works grid, who we are, and the closing contact CTA. Project cards open the detail modal in place.</div>
+      <div class="node-title">HOME</div>
+      <div class="node-desc">Positioning ("rebuilding the places long since forgotten"), what we do, a featured selection of developments, the credibility block, and the closing contact CTA. Routes visitors out to Properties and About.</div>
       <div class="node-url">/</div>
       <div class="status-bar">
           <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
@@ -1277,8 +1280,7 @@
     <div class="connector"></div>
 
     <div class="nav-row">
-      <div class="nav-item">Our Work<div class="nav-desc">Anchors to the selected works grid on the homepage</div></div>
-      <div class="nav-item">About<div class="nav-desc">Company story, leadership, track record</div>
+      <div class="nav-item">About<div class="nav-desc">Company story and team</div>
         <div class="status-bar">
           <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
           <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
@@ -1288,7 +1290,27 @@
           <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
         </div>
       </div>
-      <div class="nav-item">Contact<div class="nav-desc">Enquiry form and Tulsa office details</div>
+      <div class="nav-item">Properties<div class="nav-desc">Full portfolio of developments</div>
+        <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+        </div>
+      </div>
+      <div class="nav-item">FAQs<div class="nav-desc">Common development questions</div>
+        <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+        </div>
+      </div>
+      <div class="nav-item">Contact<div class="nav-desc">Enquiry form and office</div>
         <div class="status-bar">
           <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
           <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
@@ -1305,11 +1327,24 @@
     <div class="columns">
       <div class="column">
         <div class="group-box">
-          <div class="group-label">Project Experience</div>
+          <div class="group-label">Properties</div>
           <div class="node">
-            <div class="node-title">Project Detail Modal</div>
-            <div class="node-desc">Reusable modal template driven by Sanity: hero imagery, location, project type, scope, square footage, status, and narrative. One template serves every development, from Santa Fe Square to the Route 66 infill work.</div>
-            <div class="node-url">/#project/[slug]</div>
+            <div class="node-title">Properties Landing <span class="badge">FLAGSHIP</span></div>
+            <div class="node-desc">The full portfolio, split into featured developments and other completed work, with filtering by project type and status. This is the page brokers and partners will spend time on.</div>
+            <div class="node-url">/properties</div>
+            <div class="status-bar">
+          <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
+          <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
+          <span class="status-pill not-started seo-tag"><span class="pill-icon">○</span> SEO</span>
+          <span class="status-pill not-started content"><span class="pill-icon">○</span> Content</span>
+          <span class="status-pill not-started sanity"><span class="pill-icon">○</span> Sanity</span>
+          <span class="status-pill not-started content-created"><span class="pill-icon">○</span> Created</span>
+            </div>
+          </div>
+          <div class="node">
+            <div class="node-title">Property / Case Study</div>
+            <div class="node-desc">One Sanity-driven template serving every development: hero imagery, project facts, the redevelopment story, and before and after gallery. Each project gets its own indexable URL.</div>
+            <div class="node-url">/properties/[slug]</div>
             <div class="status-bar">
           <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
           <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
@@ -1325,9 +1360,9 @@
         <div class="group-box">
           <div class="group-label">Core Pages</div>
           <div class="node">
-            <div class="node-title">Home / Projects <span class="badge">FLAGSHIP</span></div>
-            <div class="node-desc">The primary conversion surface. Combines positioning, services, and the full portfolio in one scroll, with the project modal layered on top.</div>
-            <div class="node-url">/</div>
+            <div class="node-title">About (Team)</div>
+            <div class="node-desc">Founding story, the Hemingway reference behind the name, team profiles for Elliot Nelson and Matt Newman, the four-step approach, and the track record numbers.</div>
+            <div class="node-url">/about</div>
             <div class="status-bar">
           <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
           <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
@@ -1338,9 +1373,9 @@
             </div>
           </div>
           <div class="node">
-            <div class="node-title">About</div>
-            <div class="node-desc">Founding story, the Hemingway reference behind the name, leadership profiles for Elliot Nelson and Matt Newman, and the track record numbers that establish credibility.</div>
-            <div class="node-url">/about</div>
+            <div class="node-title">FAQs</div>
+            <div class="node-desc">Standalone page covering what kinds of projects Fishless Desert takes on, how partnerships and financing work, and the geographies served. Carries FAQPage schema.</div>
+            <div class="node-url">/faq</div>
             <div class="status-bar">
           <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
           <span class="status-pill not-started dev"><span class="pill-icon">○</span> Dev</span>
@@ -1357,7 +1392,7 @@
           <div class="group-label">Standalone Pages</div>
           <div class="node">
             <div class="node-title">Contact</div>
-            <div class="node-desc">Enquiry form routed to the team, Tulsa office address, and a short FAQ block covering partnership and development questions carried over from the legacy FAQ page.</div>
+            <div class="node-desc">Enquiry form with routing by enquiry type, plus the Tulsa office address and map with LocalBusiness markup.</div>
             <div class="node-url">/contact</div>
             <div class="status-bar">
           <span class="status-pill not-started design"><span class="pill-icon">○</span> Design</span>
@@ -1384,21 +1419,21 @@
   <div class="section-label">📋 Page Content Strategy &amp; SEO/AEO Structure</div>
 
   <div class="note" style="margin-bottom: 24px;">
-    Four pages carry the whole site, so each one has to work harder than it would on a larger sitemap. Titles stay under 60 characters, meta descriptions under 155. Every page leads with a plain one-sentence definition that an AI answer engine can lift directly, and the schema below is implemented as JSON-LD through Sanity.
+    Six pages, each with a distinct job. Titles stay under 60 characters, meta descriptions under 155. Every page leads with a plain one-sentence definition an AI answer engine can lift directly, and the schema below is implemented as JSON-LD through Sanity. Giving each development its own case study page is the single biggest SEO gain in this restructure: project names like Boxyard Tulsa and Santa Fe Square get a dedicated indexable URL instead of a modal state.
   </div>
 
   <div class="content-section">
-    <div class="content-section-title">🏠 Home / Projects</div>
+    <div class="content-section-title">🏠 Home</div>
     <div class="content-section-url">/</div>
-    <p><strong>Purpose:</strong> Establish Fishless Desert as the developer that takes on the buildings and blocks nobody else will, prove it with the portfolio, and route serious partners, brokers, and municipalities to the contact form.</p>
+    <p><strong>Purpose:</strong> Establish Fishless Desert as the developer that takes on the buildings and blocks nobody else will, prove it with a featured selection of work, and push serious visitors toward Properties or the contact form.</p>
 
     <div class="seo-box">
       <div class="seo-box-title">SEO / AEO Strategy</div>
       <p><strong>SEO Title:</strong> Urban Infill Development in Tulsa | Fishless Desert</p>
       <p><strong>Meta Description:</strong> Fishless Desert is a Tulsa real estate developer rebuilding forgotten urban places through infill, historic rehabilitation, and mixed-use projects.</p>
       <p><strong>Primary Keywords:</strong> urban infill development Tulsa, Tulsa real estate developer, urban revitalization Oklahoma, mixed-use development Tulsa</p>
-      <p><strong>Schema:</strong> Organization, ItemList (project portfolio), BreadcrumbList</p>
-      <p><strong>AEO Targets:</strong> "Who develops urban infill projects in Tulsa?" · "What does Fishless Desert do?" · "Which company developed Boxyard Tulsa?"</p>
+      <p><strong>Schema:</strong> Organization, WebSite, BreadcrumbList</p>
+      <p><strong>AEO Targets:</strong> "Who develops urban infill projects in Tulsa?" · "What does Fishless Desert do?"</p>
     </div>
 
     <div class="content-created-box">
@@ -1409,21 +1444,21 @@
       <ul>
         <li><strong>Headline:</strong> Rebuilding the places long since forgotten.</li>
         <li><strong>Body:</strong> Fishless Desert is a multidisciplinary real estate company focused on urban infill and revitalization across Oklahoma and the south-central United States.</li>
-        <li><strong>CTA:</strong> "See our work" scrolls to the portfolio grid. Secondary "Let's talk" goes to /contact.</li>
+        <li><strong>CTA:</strong> "See our properties" goes to /properties. Secondary "Let's talk" goes to /contact.</li>
       </ul>
 
       <p><strong>📌 Module 2 — What We Do</strong></p>
       <ul>
         <li><strong>Headline:</strong> From first site walk to ribbon cutting.</li>
         <li><strong>Body:</strong> Four service pillars: planning and due diligence, tax credit capital stack formation, public incentive procurement, and construction management.</li>
-        <li><strong>CTA:</strong> None. This module feeds the AI answer layer and sets up the portfolio.</li>
+        <li><strong>CTA:</strong> None. This module feeds the AI answer layer.</li>
       </ul>
 
-      <p><strong>📌 Module 3 — Selected Works</strong></p>
+      <p><strong>📌 Module 3 — Featured Work</strong></p>
       <ul>
         <li><strong>Headline:</strong> Transforming cities through placemaking.</li>
-        <li><strong>Body:</strong> Sanity-driven grid of every development: Santa Fe Square, Maple Ridge, The Boxyard, Cheyenne Megaspace, The Coliseum, McNellie's Pub Courtyard, Midland, SoBo Infill, and 11th Street Route 66. Cards open the project modal.</li>
-        <li><strong>CTA:</strong> Card click opens the project detail modal.</li>
+        <li><strong>Body:</strong> Four featured developments pulled from Sanity: Santa Fe Square, Maple Ridge, The Boxyard, and Cheyenne Megaspace. Cards link to their case study pages.</li>
+        <li><strong>CTA:</strong> "View all properties" goes to /properties.</li>
       </ul>
 
       <p><strong>📌 Module 4 — Who We Are</strong></p>
@@ -1443,16 +1478,112 @@
   </div>
 
   <div class="content-section">
-    <div class="content-section-title">🗂️ Project Detail Modal</div>
-    <div class="content-section-url">/#project/[slug]</div>
-    <p><strong>Purpose:</strong> Give each development enough depth to satisfy a prospective partner or journalist without sending the visitor to a separate page, and give search and AI engines a clean, structured record of who built what.</p>
+    <div class="content-section-title">👥 About (Team)</div>
+    <div class="content-section-url">/about</div>
+    <p><strong>Purpose:</strong> Convert credibility into trust. A partner deciding whether to bring Fishless Desert a complicated deal needs to see the track record and the people behind it.</p>
 
     <div class="seo-box">
       <div class="seo-box-title">SEO / AEO Strategy</div>
-      <p><strong>SEO Title:</strong> [Project Name] | Fishless Desert (example: Boxyard Tulsa | Fishless Desert)</p>
-      <p><strong>Meta Description:</strong> Pattern: [Project Name] in [Location]: a [project type] development by Fishless Desert. [One line on scope and outcome.]</p>
-      <p><strong>Primary Keywords:</strong> [project name], [project name] developer, [neighborhood] development Tulsa</p>
-      <p><strong>Schema:</strong> Place, CreativeWork, BreadcrumbList</p>
+      <p><strong>SEO Title:</strong> About Our Tulsa Development Team | Fishless Desert</p>
+      <p><strong>Meta Description:</strong> Founded by Elliot Nelson, Fishless Desert has delivered 30+ historic rehabilitations and roughly $430 million in urban infill across Oklahoma.</p>
+      <p><strong>Primary Keywords:</strong> Elliot Nelson developer, Fishless Desert team, Tulsa development company, historic rehabilitation Oklahoma</p>
+      <p><strong>Schema:</strong> AboutPage, Organization, Person (Elliot Nelson, Matt Newman), HowTo (the four-step approach)</p>
+      <p><strong>AEO Targets:</strong> "Who founded Fishless Desert?" · "Who is Elliot Nelson?" · "Why is it called Fishless Desert?"</p>
+    </div>
+
+    <div class="content-created-box">
+      <div class="content-created-box-title">Content Created</div>
+      <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
+
+      <p><strong>📌 Module 1 — Origin</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> The name comes from a Hemingway line about erosion and abandonment.</li>
+        <li><strong>Body:</strong> Opens with the plain definition sentence, then the two-decade story of revitalizing a deteriorated stretch of downtown Tulsa.</li>
+        <li><strong>CTA:</strong> None.</li>
+      </ul>
+
+      <p><strong>📌 Module 2 — Team</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Who we are.</li>
+        <li><strong>Body:</strong> Elliot Nelson, Founder and CEO, who also leads McNellie's Group across 24 restaurants serving more than 10 million customers in 19 years. Matt Newman, Vice President of Development, with 18+ years and over $200 million in projects, specializing in mixed-use work involving zoning changes and complex tax credit financing. Built as a repeatable Sanity team module so new hires can be added.</li>
+        <li><strong>CTA:</strong> None. Each profile carries Person schema.</li>
+      </ul>
+
+      <p><strong>📌 Module 3 — How we work</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Our approach, in four steps.</li>
+        <li><strong>Body:</strong> Numbered process covering planning and due diligence, capital stack formation, incentive procurement, and construction management. Numbered so it qualifies for HowTo schema.</li>
+        <li><strong>CTA:</strong> "See the work" goes to /properties.</li>
+      </ul>
+
+      <p><strong>📌 Module 4 — Track record</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> The numbers.</li>
+        <li><strong>Body:</strong> 30+ historic rehabilitation projects, roughly $430 million in urban infill, and a portfolio spanning office, restaurant, retail, hospitality, mixed-use, and residential.</li>
+        <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">🏗️ Properties Landing</div>
+    <div class="content-section-url">/properties</div>
+    <p><strong>Purpose:</strong> Be the proof. This is the page a broker, lender, or municipal partner scrolls before deciding Fishless Desert is credible, and the hub that feeds link equity to every case study.</p>
+
+    <div class="seo-box">
+      <div class="seo-box-title">SEO / AEO Strategy</div>
+      <p><strong>SEO Title:</strong> Our Properties &amp; Developments | Fishless Desert</p>
+      <p><strong>Meta Description:</strong> Explore Fishless Desert developments across Tulsa and Oklahoma, from Santa Fe Square and The Boxyard to Route 66 infill and historic renovations.</p>
+      <p><strong>Primary Keywords:</strong> Tulsa developments, Fishless Desert properties, Tulsa mixed-use projects, Oklahoma infill developments</p>
+      <p><strong>Schema:</strong> CollectionPage, ItemList, BreadcrumbList</p>
+      <p><strong>AEO Targets:</strong> "What projects has Fishless Desert developed?" · "What developments are in downtown Tulsa?"</p>
+    </div>
+
+    <div class="content-created-box">
+      <div class="content-created-box-title">Content Created</div>
+      <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
+
+      <p><strong>📌 Module 1 — Intro</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Every project started as somewhere people had stopped going.</li>
+        <li><strong>Body:</strong> One short paragraph framing the portfolio, followed by a plain summary line naming the asset types: office, restaurant, retail, hospitality, mixed-use, and residential.</li>
+        <li><strong>CTA:</strong> None.</li>
+      </ul>
+
+      <p><strong>📌 Module 2 — Featured developments</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Featured developments.</li>
+        <li><strong>Body:</strong> Large-format cards for Santa Fe Square, Maple Ridge, The Boxyard, and Cheyenne Megaspace, each with location, type, and a one-line hook.</li>
+        <li><strong>CTA:</strong> Each card links to its case study page.</li>
+      </ul>
+
+      <p><strong>📌 Module 3 — Full portfolio</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Everything we have developed.</li>
+        <li><strong>Body:</strong> Grid covering The Coliseum, McNellie's Pub Courtyard, Midland, SoBo Infill Development, and the 11th Street Route 66 Infill Development, with filters for project type and status. Sanity-driven so new work appears automatically.</li>
+        <li><strong>CTA:</strong> Each card links to its case study page.</li>
+      </ul>
+
+      <p><strong>📌 Module 4 — Closing CTA</strong></p>
+      <ul>
+        <li><strong>Headline:</strong> Bring us the hard one.</li>
+        <li><strong>Body:</strong> Short invitation for owners and partners with a property in mind.</li>
+        <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-title">📄 Property / Case Study</div>
+    <div class="content-section-url">/properties/[slug]</div>
+    <p><strong>Purpose:</strong> Give each development enough depth to satisfy a prospective partner or journalist, and give search and AI engines a clean, indexable record of who built what. One template, every project.</p>
+
+    <div class="seo-box">
+      <div class="seo-box-title">SEO / AEO Strategy</div>
+      <p><strong>SEO Title:</strong> [Property Name] | Fishless Desert (example: Boxyard Tulsa | Fishless Desert)</p>
+      <p><strong>Meta Description:</strong> Pattern: [Property Name] in [Location] is a [project type] development by Fishless Desert. [One line on scope and outcome.]</p>
+      <p><strong>Primary Keywords:</strong> [property name], [property name] developer, [neighborhood] development Tulsa</p>
+      <p><strong>Schema:</strong> Article or CreativeWork, Place, BreadcrumbList</p>
       <p><strong>AEO Targets:</strong> "What is Boxyard Tulsa?" · "Who developed Santa Fe Square?" · "How big is Santa Fe Square?"</p>
     </div>
 
@@ -1460,11 +1591,11 @@
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Modal header</strong></p>
+      <p><strong>📌 Module 1 — Hero and definition</strong></p>
       <ul>
-        <li><strong>Headline:</strong> [Project Name]</li>
-        <li><strong>Body:</strong> Location, project type, and status as a metadata row. One plain definition sentence sits directly under it, liftable by AI: "[Project Name] is a [type] development in [location] by Fishless Desert."</li>
-        <li><strong>CTA:</strong> Close returns to the portfolio grid with scroll position preserved.</li>
+        <li><strong>Headline:</strong> [Property Name]</li>
+        <li><strong>Body:</strong> Location, project type, and status as a metadata row, with one plain definition sentence directly beneath it: "[Property Name] is a [type] development in [location] by Fishless Desert." That sentence is what AI engines will lift.</li>
+        <li><strong>CTA:</strong> None.</li>
       </ul>
 
       <p><strong>📌 Module 2 — The story</strong></p>
@@ -1481,59 +1612,59 @@
         <li><strong>CTA:</strong> None.</li>
       </ul>
 
-      <p><strong>📌 Module 4 — Gallery</strong></p>
+      <p><strong>📌 Module 4 — Gallery and next</strong></p>
       <ul>
         <li><strong>Headline:</strong> None. Imagery carries this block.</li>
-        <li><strong>Body:</strong> Before and after imagery where available, all with descriptive alt text.</li>
-        <li><strong>CTA:</strong> "Next project" advances to the following development without closing the modal.</li>
+        <li><strong>Body:</strong> Before and after imagery where available, all with descriptive alt text, followed by two or three related developments.</li>
+        <li><strong>CTA:</strong> "Back to all properties" goes to /properties.</li>
       </ul>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-title">👥 About</div>
-    <div class="content-section-url">/about</div>
-    <p><strong>Purpose:</strong> Convert credibility into trust. A partner deciding whether to bring Fishless Desert a complicated deal needs to see the track record and the people behind it.</p>
+    <div class="content-section-title">❓ FAQs</div>
+    <div class="content-section-url">/faq</div>
+    <p><strong>Purpose:</strong> Answer the questions that come up before a first call, filter out poor-fit enquiries, and capture the question-shaped searches that AI answer engines pull from directly.</p>
 
     <div class="seo-box">
       <div class="seo-box-title">SEO / AEO Strategy</div>
-      <p><strong>SEO Title:</strong> About Our Tulsa Development Team | Fishless Desert</p>
-      <p><strong>Meta Description:</strong> Founded by Elliot Nelson, Fishless Desert has delivered 30+ historic rehabilitations and roughly $430 million in urban infill across Oklahoma.</p>
-      <p><strong>Primary Keywords:</strong> Elliot Nelson developer, Fishless Desert team, Tulsa development company, historic rehabilitation Oklahoma</p>
-      <p><strong>Schema:</strong> AboutPage, Organization, Person (Elliot Nelson, Matt Newman)</p>
-      <p><strong>AEO Targets:</strong> "Who founded Fishless Desert?" · "Who is Elliot Nelson?" · "Why is it called Fishless Desert?"</p>
+      <p><strong>SEO Title:</strong> Development FAQs | Fishless Desert</p>
+      <p><strong>Meta Description:</strong> Answers on the projects Fishless Desert takes on, how development partnerships and tax credit financing work, and the regions we build in.</p>
+      <p><strong>Primary Keywords:</strong> urban development FAQ, historic tax credit development, Tulsa development partnership, infill development process</p>
+      <p><strong>Schema:</strong> FAQPage, BreadcrumbList</p>
+      <p><strong>AEO Targets:</strong> "How do historic tax credits work in development?" · "Does Fishless Desert partner on outside projects?" · "Where does Fishless Desert build?"</p>
     </div>
 
     <div class="content-created-box">
       <div class="content-created-box-title">Content Created</div>
       <hr style="border:none;border-top:1px solid #bae6fd;margin:14px 0;">
 
-      <p><strong>📌 Module 1 — Origin</strong></p>
+      <p><strong>📌 Module 1 — Intro</strong></p>
       <ul>
-        <li><strong>Headline:</strong> The name comes from a Hemingway line about erosion and abandonment.</li>
-        <li><strong>Body:</strong> Opens with the plain definition sentence, then the two-decade story of revitalizing a deteriorated stretch of downtown Tulsa.</li>
+        <li><strong>Headline:</strong> Questions we get asked most.</li>
+        <li><strong>Body:</strong> One short framing paragraph so the page is not a bare accordion.</li>
         <li><strong>CTA:</strong> None.</li>
       </ul>
 
-      <p><strong>📌 Module 2 — Leadership</strong></p>
+      <p><strong>📌 Module 2 — What we take on</strong></p>
       <ul>
-        <li><strong>Headline:</strong> Who we are.</li>
-        <li><strong>Body:</strong> Elliot Nelson, Founder and CEO, who also leads McNellie's Group across 24 restaurants serving more than 10 million customers in 19 years. Matt Newman, Vice President of Development, with 18+ years and over $200 million in projects, specializing in mixed-use work involving zoning changes and complex tax credit financing.</li>
-        <li><strong>CTA:</strong> None. Each profile is marked up as Person schema.</li>
+        <li><strong>Headline:</strong> Projects and partnerships.</li>
+        <li><strong>Body:</strong> Questions covering the types and sizes of project Fishless Desert pursues, how a property owner starts a conversation, and how partnerships are typically structured. Each answer opens with a direct one-sentence response before any detail.</li>
+        <li><strong>CTA:</strong> None.</li>
       </ul>
 
-      <p><strong>📌 Module 3 — How we work</strong></p>
+      <p><strong>📌 Module 3 — Financing and incentives</strong></p>
       <ul>
-        <li><strong>Headline:</strong> Our approach, in four steps.</li>
-        <li><strong>Body:</strong> Numbered process covering planning and due diligence, capital stack formation, incentive procurement, and construction management. Numbered so it qualifies for HowTo schema.</li>
-        <li><strong>CTA:</strong> "See the work" goes to the homepage portfolio.</li>
+        <li><strong>Headline:</strong> How the money works.</li>
+        <li><strong>Body:</strong> Plain-language answers on historic tax credits, capital stack formation, and public incentive procurement. This is the block most likely to be surfaced by AI search.</li>
+        <li><strong>CTA:</strong> None.</li>
       </ul>
 
-      <p><strong>📌 Module 4 — Track record</strong></p>
+      <p><strong>📌 Module 4 — Where we work</strong></p>
       <ul>
-        <li><strong>Headline:</strong> The numbers.</li>
-        <li><strong>Body:</strong> 30+ historic rehabilitation projects, roughly $430 million in urban infill, and a portfolio spanning office, restaurant, retail, hospitality, mixed-use, and residential.</li>
-        <li><strong>CTA:</strong> "Let's talk" goes to /contact.</li>
+        <li><strong>Headline:</strong> Geography.</li>
+        <li><strong>Body:</strong> Oklahoma and the south-central United States, with Tulsa as the base. Closes the page with a route into contact.</li>
+        <li><strong>CTA:</strong> "Still have a question?" goes to /contact.</li>
       </ul>
     </div>
   </div>
@@ -1548,8 +1679,8 @@
       <p><strong>SEO Title:</strong> Contact Fishless Desert | Tulsa Development</p>
       <p><strong>Meta Description:</strong> Get in touch with the Fishless Desert development team in Tulsa about a property, a partnership, or a redevelopment opportunity.</p>
       <p><strong>Primary Keywords:</strong> contact Fishless Desert, Tulsa developer contact, Tulsa development partnership</p>
-      <p><strong>Schema:</strong> ContactPage, LocalBusiness (Tulsa office), FAQPage</p>
-      <p><strong>AEO Targets:</strong> "How do I contact Fishless Desert?" · "Where is Fishless Desert located?" · "Does Fishless Desert take on outside projects?"</p>
+      <p><strong>Schema:</strong> ContactPage, LocalBusiness (Tulsa office)</p>
+      <p><strong>AEO Targets:</strong> "How do I contact Fishless Desert?" · "Where is Fishless Desert located?"</p>
     </div>
 
     <div class="content-created-box">
@@ -1570,11 +1701,11 @@
         <li><strong>CTA:</strong> "Get directions" opens the map.</li>
       </ul>
 
-      <p><strong>📌 Module 3 — FAQ</strong></p>
+      <p><strong>📌 Module 3 — Pointer to FAQs</strong></p>
       <ul>
-        <li><strong>Headline:</strong> Common questions.</li>
-        <li><strong>Body:</strong> Carries over the strongest questions from the legacy FAQ page, covering what kinds of projects Fishless Desert takes on, how partnerships work, and the geographies served. Marked up as FAQPage.</li>
-        <li><strong>CTA:</strong> None.</li>
+        <li><strong>Headline:</strong> Looking for a quick answer?</li>
+        <li><strong>Body:</strong> Short block steering common questions to the FAQs page so the form stays high-intent.</li>
+        <li><strong>CTA:</strong> "Read the FAQs" goes to /faq.</li>
       </ul>
     </div>
   </div>
@@ -1656,7 +1787,7 @@
       <li><strong>Agency:</strong> Forefathers Group, 524 Prince St, Bordentown, New Jersey 08505.</li>
       <li><strong>Proposal sent:</strong> August 12, 2026. <strong>Accepted:</strong> August 13, 2026.</li>
       <li><strong>Timeline:</strong> 4 weeks. Start August 20, 2026, estimated completion September 16, 2026.</li>
-      <li><strong>Legacy URLs needing redirects:</strong> /about-fishless-desert, /properties/our-work, /properties/[slug], /faq</li>
+      <li><strong>Legacy URL mapping:</strong> /about-fishless-desert redirects to /about, /properties/our-work redirects to /properties. /properties/[slug] and /faq keep their existing paths.</li>
     </ul>
   </div>
 
@@ -1669,7 +1800,7 @@
 <!-- ============================================ -->
 
 <div class="center">
-  <div class="page-count">4 pages tracked &nbsp;·&nbsp; 24 status items across 6 categories &nbsp;·&nbsp; 25 milestones across 3 phases</div>
+  <div class="page-count">6 pages tracked &nbsp;·&nbsp; 36 status items across 6 categories &nbsp;·&nbsp; 26 milestones across 3 phases</div>
 </div>
 
 <div style="height: 24px;"></div>
